@@ -18,13 +18,13 @@ public class TestActivity extends Activity {
     Random random = new Random();
     int n = 0; //delete me later
     long Result = 0; // my time reaction
-//    boolean testing = false; future use
+   boolean testing = false;
     long StartPoint;
 
     private void makeTest() {
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
         l1.setBackgroundColor(Color.BLUE);
-//        testing = true;
+        testing = true;
         StartPoint = System.currentTimeMillis();
         Log.d(TAG, "testMethod finishing");
     }
@@ -32,10 +32,8 @@ public class TestActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "just onStart super");
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
         l1.setBackgroundColor(Color.GREEN);
-        Log.d(TAG, "test colour to green");
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 makeTest();
@@ -60,6 +58,7 @@ public class TestActivity extends Activity {
         Intent intent = new Intent(this, FinishActivity.class);
         intent.putExtra("Result", Result);
         startActivity(intent);
+        finish();
     }
 
 

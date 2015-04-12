@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">CheckReaction</string>
-
     <string name="action_settings">Settings</string>
-
     <string name="title_activity_test">TestActivity</string>
-    <string name="dummy_button">DelMe Button</string>
     <string name="test_background_content"></string>
     <string name="title_activity_finish">FinishActivity</string>
     <string name="TryAgain">Tap to try again</string>
-    <string name="Tutor">Tap when blue as fast as can</string>
+    <string name="Tutor">Tap when blue as fast as you can</string>
     <string name="logo">Check your Reaction!</string>
     <string name="tap">Tap to start</string>
     <string name="exception_like_Result_Is_1">Either you typed in 1ms or there is an error, please contact developer</string>

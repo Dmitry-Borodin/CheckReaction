@@ -76,3 +76,4 @@ public class FinishActivity extends ActionBarActivity {
     }
 }
 
+//TODO: back to startActivity

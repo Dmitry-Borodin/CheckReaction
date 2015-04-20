@@ -71,9 +71,9 @@ public class FinishActivity extends ActionBarActivity {
 
     public void againMethod(View view) {
         Intent intent = new Intent(this, TestActivity.class);
-
         startActivity(intent);
+        finish();
+//        if not finish here, why i getting old intent in onCreate?
     }
 }
 
-//TODO: back to startActivity

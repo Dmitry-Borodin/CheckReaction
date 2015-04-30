@@ -49,3 +49,5 @@ public class StartActivity extends ActionBarActivity {
     }
 
 }
+
+//TODO: make logo

@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 public class FinishActivity extends ActionBarActivity {
 
-
-
+    
     long Result;
     TextView ResultView;
     private static final String TAG = "myLogs";

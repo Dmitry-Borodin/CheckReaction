@@ -64,4 +64,4 @@ public class TestActivity extends Activity {
 
 }
 
-//TODO:удалить лишние лейауты тут, а финиш переделать обратно
+//TODO: осталось сделать онтач

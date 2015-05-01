@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".StartActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,8 +19,10 @@
             android:name=".TestActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:parentActivityName=".StartActivity" >
-            <meta-data
+            android:parentActivityName=".StartActivity"
+            android:theme="@style/Halo"
+            >
+                <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.two_two.checkreaction.StartActivity" />
         </activity>

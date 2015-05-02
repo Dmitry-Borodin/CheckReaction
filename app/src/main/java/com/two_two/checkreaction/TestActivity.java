@@ -6,13 +6,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import java.util.Random;
 
 
-public class TestActivity extends Activity {
+public class TestActivity extends Activity implements View.OnTouchListener {
 
     private static final String TAG = "myLogs";
     Random random = new Random();
@@ -34,11 +35,12 @@ public class TestActivity extends Activity {
         super.onStart();
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
         l1.setBackgroundColor(Color.GREEN);
+        l1.setOnTouchListener(this);
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 makeTest();
             }
-        }, random.nextInt(5000) + random.nextInt(1000) + 1);
+        }, random.nextInt(5000) + random.nextInt(1000) + 500);
         Log.d(TAG, "Result in onStart" + Result);
     }
 
@@ -50,7 +52,20 @@ public class TestActivity extends Activity {
     }
 
 
-    public void onClick(View view) {
+//    public void onClick(View view) {
+//        if (testing) {
+//            Result = System.currentTimeMillis() - StartPoint;
+//        }
+//        Log.d(TAG, "Finish Result " + Result);
+//        Intent intent = new Intent(this, FinishActivity.class);
+//        intent.putExtra("Result", Result);
+//        startActivity(intent);
+//        finish();
+//    }
+
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
         if (testing) {
             Result = System.currentTimeMillis() - StartPoint;
         }
@@ -59,9 +74,7 @@ public class TestActivity extends Activity {
         intent.putExtra("Result", Result);
         startActivity(intent);
         finish();
+        return false;
     }
-
-
 }
 
-//TODO: осталось сделать онтач

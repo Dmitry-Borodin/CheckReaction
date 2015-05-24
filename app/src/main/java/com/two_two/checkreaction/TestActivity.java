@@ -48,20 +48,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-
     }
-
-
-//    public void onClick(View view) {
-//        if (testing) {
-//            Result = System.currentTimeMillis() - StartPoint;
-//        }
-//        Log.d(TAG, "Finish Result " + Result);
-//        Intent intent = new Intent(this, FinishActivity.class);
-//        intent.putExtra("Result", Result);
-//        startActivity(intent);
-//        finish();
-//    }
 
 
     @Override

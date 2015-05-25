@@ -15,7 +15,6 @@ import java.util.Random;
 
 public class TestActivity extends Activity implements View.OnTouchListener {
 
-    private static final String TAG = "myLogs";
     Random random = new Random();
     int n = 0; //delete me later
     long Result = 0; // my time reaction
@@ -27,7 +26,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
         l1.setBackgroundColor(Color.BLUE);
         testing = true;
         StartPoint = System.currentTimeMillis();
-        Log.d(TAG, "testMethod finishing");
+        Log.d(ReactionTest.TAG, "testMethod finishing");
     }
 
     @Override
@@ -41,7 +40,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 makeTest();
             }
         }, random.nextInt(5000) + random.nextInt(1000) + 500);
-        Log.d(TAG, "Result in onStart" + Result);
+        Log.d(ReactionTest.TAG, "Result in onStart" + Result);
     }
 
     @Override
@@ -56,7 +55,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
         if (testing) {
             Result = System.currentTimeMillis() - StartPoint;
         }
-        Log.d(TAG, "Finish Result " + Result);
+        Log.d(ReactionTest.TAG, "Finish Result " + Result);
         Intent intent = new Intent(this, FinishActivity.class);
         intent.putExtra("Result", Result);
         startActivity(intent);

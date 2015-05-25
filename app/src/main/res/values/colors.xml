@@ -2,7 +2,11 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="blue">#6300ff</color>
-    <color name="greed">#e49b0f</color>
-    <color name="red">#ffff0000</color>
-
+    <color name="greed">#4CAF50</color>
+    <color name="test1">#212121</color>
+    <color name="test2">#FF9800</color>
+    <color name="test3">#9E9E9E</color>
+    <color name="test4">#F44336</color>
+    <color name="test5">#2196F3</color>
+    <color name="test6">#FFC107</color>
 </resources>

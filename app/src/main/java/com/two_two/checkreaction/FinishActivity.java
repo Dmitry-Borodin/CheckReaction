@@ -15,21 +15,19 @@ public class FinishActivity extends ActionBarActivity {
     
     long Result;
     TextView ResultView;
-    private static final String TAG = "myLogs";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
-        Log.d(TAG,"before getextre");
+        Log.d(ReactionTest.TAG,"before getextre");
         Intent intent = getIntent();
         try {
         Result = intent.getLongExtra("Result",1);
         }catch (Exception e) {
             e.printStackTrace();
         }
-        Log.d(TAG,"before findViewById");
+        Log.d(ReactionTest.TAG,"before findViewById");
         ResultView = (TextView)findViewById(R.id.ResultView);
         try {
             if (Result == 1) {

@@ -12,8 +12,6 @@ import android.view.View;
 public class StartActivity extends ActionBarActivity {
  //   View startView = findViewById(r.id.StActivity);
 
-    private static final String TAG = "myLogs";
-
     public void stCheckMethod(View view){
         Intent intent = new Intent(this, TestActivity.class);
         startActivity(intent);
@@ -21,7 +19,7 @@ public class StartActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG,"start created");
+        Log.d(ReactionTest.TAG,"start created");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
     }

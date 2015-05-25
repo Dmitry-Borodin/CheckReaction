@@ -21,12 +21,16 @@ public class TestActivity extends Activity implements View.OnTouchListener {
    boolean testing = false;
     long StartPoint;
 
-    private void makeTest() {
+    private void makeSimpleTest() {
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
         l1.setBackgroundColor(Color.BLUE);
         testing = true;
         StartPoint = System.currentTimeMillis();
         Log.d(ReactionTest.TAG, "testMethod finishing");
+    }
+
+    private void makeComplexTest(){
+        FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
     }
 
     @Override
@@ -37,7 +41,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
         l1.setOnTouchListener(this);
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                makeTest();
+                makeSimpleTest();
             }
         }, random.nextInt(5000) + random.nextInt(1000) + 500);
         Log.d(ReactionTest.TAG, "Result in onStart" + Result);

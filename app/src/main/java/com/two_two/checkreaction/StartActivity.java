@@ -12,7 +12,8 @@ import android.view.View;
 public class StartActivity extends ActionBarActivity {
  //   View startView = findViewById(r.id.StActivity);
 
-    public void stCheckMethod(View view){
+    public void startCheckMethod(View view){
+        ReactionTest.currentTestType= ReactionTest.testType.simpleTest;
         Intent intent = new Intent(this, TestActivity.class);
         startActivity(intent);
     }

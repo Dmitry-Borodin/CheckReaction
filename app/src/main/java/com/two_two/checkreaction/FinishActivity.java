@@ -35,7 +35,15 @@ public class FinishActivity extends ActionBarActivity {
             } else if (Result == 0){
                 ResultView.setText(getString(R.string.Too_fast));
             } else {
-                ResultView.setText(getString(R.string.reaction_is) + Result + getString(R.string.ms));
+                switch (ReactionTest.currentTestType){
+                    case simpleTest: ResultView.setText(getString(R.string.simple_reaction_is) + Result + getString(R.string.ms));
+                        break;
+                    case sixTryTest: ResultView.setText(getString(R.string.complex_reaction_is) + Result + getString(R.string.ms));
+                        break;
+                    default: ResultView.setText(getString(R.string.ErrorInTestTypeSwitch));
+                }
+
+
             }
         }catch (Exception e){
             e.printStackTrace();

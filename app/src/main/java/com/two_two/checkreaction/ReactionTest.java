@@ -6,6 +6,7 @@ package com.two_two.checkreaction;
  */
 public class ReactionTest {
     public static final String TAG = "myLogs";
-    public enum testType {simpleTest, sixTryTest}
+    public static final int COMPLEXTRYTESTCOUNTER = 6;
+    public enum testType {simpleTest, complexTryTest}
     public static testType currentTestType;
     }

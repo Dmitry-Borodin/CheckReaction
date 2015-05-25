@@ -23,7 +23,7 @@ public class FinishActivity extends ActionBarActivity {
         Log.d(ReactionTest.TAG,"before getextre");
         Intent intent = getIntent();
         try {
-        Result = intent.getLongExtra("Result",1);
+        Result = intent.getLongExtra("result",1);
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,9 +38,11 @@ public class FinishActivity extends ActionBarActivity {
                 switch (ReactionTest.currentTestType){
                     case simpleTest: ResultView.setText(getString(R.string.simple_reaction_is) + Result + getString(R.string.ms));
                         break;
-                    case sixTryTest: ResultView.setText(getString(R.string.complex_reaction_is) + Result + getString(R.string.ms));
+                    case complexTryTest: ResultView.setText(getString(R.string.complex_reaction_is) + Result + getString(R.string.ms));
                         break;
-                    default: ResultView.setText(getString(R.string.ErrorInTestTypeSwitch));
+                    default:
+                        Log.e(ReactionTest.TAG,"error in onTouch switch - default working");
+                        ResultView.setText(getString(R.string.ErrorInTestTypeSwitch));
                 }
 
 

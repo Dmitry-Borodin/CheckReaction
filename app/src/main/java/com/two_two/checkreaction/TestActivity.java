@@ -145,6 +145,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
         finish();
     }
 }
+
 //TODO make two buttons for working tests
 //sounds or colour chenged when typed?
 //TODO change style to same in all activities

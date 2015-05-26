@@ -11,4 +11,6 @@
     <string name="Too_fast">Слишком рано! Цвет еще не поменялся</string>
     <string name="simple_reaction_is">"Ваша реакция "</string>
     <string name="ms">" мс"</string>
+    <string name="simple_test_button">Simple test</string>
+    <string name="complex_test_button">Complex Test</string>
 </resources>

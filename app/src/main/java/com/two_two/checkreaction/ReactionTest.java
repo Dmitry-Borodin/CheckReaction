@@ -8,5 +8,5 @@ public class ReactionTest {
     public static final String TAG = "myLogs";
     public static final int COMPLEXTRYTESTCOUNTER = 6;
     public enum testType {simpleTest, complexTryTest}
-    public static testType currentTestType;
+    public static testType currentTestType=testType.complexTryTest;
     }

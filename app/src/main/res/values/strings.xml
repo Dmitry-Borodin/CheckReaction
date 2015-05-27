@@ -13,5 +13,8 @@
     <string name="ms">" ms"</string>
     <string name="ErrorInTestTypeSwitch">There is an error in currentTestType switch. Please contact developer.</string>
     <string name="simple_test_button">Simple test</string>
-    <string name="complex_test_button">Complex Test</string>
+    <string name="complex_test_button">Complex test</string>
+    <string name="testing_command_tap">TAP!</string>
+    <string name="testing_string_ready">Ready!</string>
+    <string name="delete_me">Small Text</string>
 </resources>

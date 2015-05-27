@@ -31,7 +31,7 @@ public class StartActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(ReactionTest.TAG,"start created");
+//        Log.d(ReactionTest.TAG,"start created");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
     }

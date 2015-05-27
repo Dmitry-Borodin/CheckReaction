@@ -10,7 +10,7 @@ public class ReactionTest {
     public static final int COMPLEXTRYTESTCOUNTER = 5; //5 mean 6, because from 0
 
     public enum testType {simpleTest, complexTryTest}
-    public static testType currentTestType;
+    public static testType currentTestType=testType.complexTryTest;
 
     static private Random random = new Random();
     static int getRandomTime(){

@@ -20,7 +20,7 @@ public class FinishActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
-        Log.d(ReactionTest.TAG,"before getextre");
+//        Log.d(ReactionTest.TAG,"before getextre");
         Intent intent = getIntent();
         try {
         Result = intent.getLongExtra("result",1);

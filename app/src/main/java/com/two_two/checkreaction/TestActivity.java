@@ -9,11 +9,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
 
-
 public class TestActivity extends Activity implements View.OnTouchListener {
-
 
     long result = 0; // my time reaction
     boolean colourChenged = false;
@@ -21,22 +20,25 @@ public class TestActivity extends Activity implements View.OnTouchListener {
     long startPoint; //this just for difference used in simpleTest
     int iteration=1; //used only in complexTest
     ArrayList<Long> complecxReactionList = new ArrayList<>(6);
+    TextView textDownSmall,textCenterCommandToStart;
 
     private void makeSimpleTest() {
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
+        textCenterCommandToStart.setText(getString(R.string.testing_command_tap));
         l1.setBackgroundColor(Color.BLUE);
         colourChenged = true;
         startPoint = System.currentTimeMillis();
-        Log.d(ReactionTest.TAG, "testMethod finishing");
+//        Log.d(ReactionTest.TAG, "testMethod finishing");
     }
 
     private void makeComplexTest(){
         FrameLayout l1 = (FrameLayout) findViewById(R.id.TestLayout);
         startPoint = System.currentTimeMillis();
-//        String colourName="R.color.test"+iteration;
+//        String colourName="R.color.test"+iteration; //this doen't work
 //        Color backgroundColor = getResources().getColor(R.color.test1);
+        textCenterCommandToStart.setText(getString(R.string.testing_command_tap));
         switch (iteration){
-            case 1:l1.setBackgroundColor(getResources().getColor(R.color.test1)); //TODO initialise colour before
+            case 1:l1.setBackgroundColor(getResources().getColor(R.color.test1));
                 break;
             case 2:l1.setBackgroundColor(getResources().getColor(R.color.test2));
                 break;
@@ -48,10 +50,11 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 break;
             case 6:l1.setBackgroundColor(getResources().getColor(R.color.test6));
                 break;
-            default:l1.setBackgroundColor(Color.WHITE);
+            default:l1.setBackgroundColor(Color.BLACK);
                 break;
         }
         iteration++;
+        textDownSmall.setText("Iteration "+iteration+" from "+ReactionTest.COMPLEXTRYTESTCOUNTER);
         colourChenged=true;
     }
 
@@ -70,6 +73,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 }, ReactionTest.getRandomTime());
                 break;
             case complexTryTest:
+                textDownSmall.setText("Iteration "+iteration+" from "+ReactionTest.COMPLEXTRYTESTCOUNTER);
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
                         makeComplexTest();
@@ -87,6 +91,9 @@ public class TestActivity extends Activity implements View.OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        textDownSmall=(TextView)findViewById(R.id.textDownSmall);
+        textDownSmall.setText("");
+        textCenterCommandToStart=(TextView)findViewById(R.id.textCenterCommandToStart);
     }
 
 
@@ -101,12 +108,13 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 case complexTryTest:{
                     if (!complexTestFinished){
                         complecxReactionList.add(System.currentTimeMillis()-startPoint);
-                        new Handler().postDelayed(new Runnable(){
+                        new Handler().postDelayed(new Runnable() {
                             public void run() {  //make one more test
                                 makeComplexTest();
                             }
                         }, ReactionTest.getRandomTime());
                         colourChenged=false;
+                        textCenterCommandToStart.setText(getString(R.string.testing_string_ready));
                         if (complecxReactionList.size()>=ReactionTest.COMPLEXTRYTESTCOUNTER) complexTestFinished=true;
                         break;
                     }else {
@@ -146,9 +154,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
     }
 }
 
-//TODO make two buttons for working tests
-//sounds or colour chenged when typed?
 //TODO change style to same in all activities
-//TODO two buttons with different tests
+//TODO make this work when rotate
 //TODO local database
 //TODO internet database

@@ -9,12 +9,11 @@
     <string name="exception_like_Result_Is_1">Either you typed in 1ms or there is an error, please contact developer</string>
     <string name="Too_fast">You typed before it changed colour</string>
     <string name="simple_reaction_is">"Your reaction is "</string>
-    <string name="complex_reaction_is">Your complex reaction is </string>
+    <string name="complex_reaction_is">"Your complex reaction is "</string>
     <string name="ms">" ms"</string>
     <string name="ErrorInTestTypeSwitch">There is an error in currentTestType switch. Please contact developer.</string>
     <string name="simple_test_button">Simple test</string>
     <string name="complex_test_button">Complex test</string>
     <string name="testing_command_tap">TAP!</string>
     <string name="testing_string_ready">Ready!</string>
-    <string name="delete_me">Small Text</string>
 </resources>

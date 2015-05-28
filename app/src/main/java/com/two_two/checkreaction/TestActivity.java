@@ -54,7 +54,6 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 break;
         }
         iteration++;
-        textDownSmall.setText("Iteration "+iteration+" from "+ReactionTest.COMPLEXTRYTESTCOUNTER);//+1 because counter from 0, but people look from 1
         colourChenged=true;
     }
 
@@ -73,12 +72,12 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                 }, ReactionTest.getRandomTime());
                 break;
             case complexTryTest:
-                textDownSmall.setText("Iteration "+iteration+" from "+ReactionTest.COMPLEXTRYTESTCOUNTER);
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
                         makeComplexTest();
                     }
                 }, ReactionTest.getRandomTime());
+                textDownSmall.setText(getString(R.string.Iteration) + iteration + getString(R.string.from) + ReactionTest.COMPLEXTRYTESTCOUNTER);
                 break;
             default:
                 Log.e(ReactionTest.TAG, "error in onStart switch - default working");
@@ -115,6 +114,7 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                         }, ReactionTest.getRandomTime());
                         colourChenged=false;
                         textCenterCommandToStart.setText(getString(R.string.testing_string_ready));
+                        textDownSmall.setText("Iteration "+iteration+" from "+ReactionTest.COMPLEXTRYTESTCOUNTER);
                         if (complecxReactionList.size()>=ReactionTest.COMPLEXTRYTESTCOUNTER-1) complexTestFinished=true;
                         break;
                     }else {
@@ -128,7 +128,6 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                             result += complecxReactionList.get(i);
                             Log.e(ReactionTest.TAG, "result now ="+result+" geti="+complecxReactionList.get(i));
                         }
-                        Log.e(ReactionTest.TAG,"array size is "+complecxReactionList.size());
                         result = result / (complecxReactionList.size());
                         gotoFinishActivity();
                         break;
@@ -154,8 +153,6 @@ public class TestActivity extends Activity implements View.OnTouchListener {
         finish();
     }
 }
-//TODO попыток, текст
-//TODO change style to same in all activities
-//TODO make this work when rotate
+
 //TODO local database
 //TODO internet database

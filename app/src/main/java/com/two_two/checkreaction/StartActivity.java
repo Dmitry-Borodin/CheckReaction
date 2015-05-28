@@ -1,5 +1,6 @@
 package com.two_two.checkreaction;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -9,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class StartActivity extends ActionBarActivity {
+public class StartActivity extends Activity {
  //   View startView = findViewById(r.id.StActivity);
 
 /*    public void startCheckMethod(View view){ //not used anymore. Was used from layout

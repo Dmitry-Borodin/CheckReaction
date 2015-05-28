@@ -3,7 +3,7 @@
     <string name="action_settings">Настройки</string>
     <string name="title_activity_test">ТестАктивити</string>
     <string name="title_activity_finish">Результат</string>
-    <string name="TryAgain">Нажми меня, чтобы повторить</string>
+    <string name="TryAgain">Нажми, чтобы повторить</string>
     <string name="Tutor">Нажми, когда фон поменяется как можно быстрее</string>
     <string name="logo">Проверь свою реакцию</string>
     <string name="exception_like_Result_Is_1">Либо ваша реакция 1мс, либо возникла ошибка. Обратитесь к разработчику.</string>

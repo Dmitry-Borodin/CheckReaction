@@ -137,7 +137,6 @@ public class TestActivity extends Activity implements View.OnTouchListener {
                     Log.e(ReactionTest.TAG, "error in onTouch switch 1 - default working");
                     throw new Error();
             }
-
         }else {
             result=0;
             gotoFinishActivity();

@@ -8,6 +8,8 @@ import com.two_two.checkreaction.models.TestResult;
 import com.two_two.checkreaction.models.TestType;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Dmitry Borodin on 1/4/2016.
@@ -17,7 +19,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     private static volatile TestPresenter sInstance;
     private ReactionTest mReactionTest;
     private ColorGenerator mColorGenerator;
-    private ArrayList<TestContract.View> mActivityList = new ArrayList<>(2);
+    private Set<TestContract.View> mActivityList = new HashSet<>();
 
     public static TestPresenter getInstance() {
         TestPresenter instance = sInstance;

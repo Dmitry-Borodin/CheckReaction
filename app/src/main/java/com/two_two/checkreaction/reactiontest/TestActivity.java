@@ -30,6 +30,7 @@ public class TestActivity extends Activity implements TestContract.View {
         if (savedInstanceState == null) {
             TestType testType = (TestType) getIntent().getSerializableExtra(TestType.TAG);
             assert (testType != null);
+            mPresenter.registerActivity(this);
             mPresenter.initialize(testType, getApplicationContext());
         }
     }

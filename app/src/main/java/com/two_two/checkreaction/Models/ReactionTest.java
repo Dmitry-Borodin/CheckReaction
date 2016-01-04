@@ -1,8 +1,6 @@
 package com.two_two.checkreaction.models;
 
 import android.util.Log;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +12,7 @@ public final class ReactionTest {
     //*******************************************************
     // Section: values
     //*******************************************************
+
     private static final String TAG = "ReactionTest";
     private final TestType mTestType;
     private boolean mRunned = false;
@@ -56,6 +55,7 @@ public final class ReactionTest {
         }
         if (isTapWaited) {
             onTapWaited();
+            isTapWaited = false;
         }else {
             buildFailResults();
         }

@@ -6,7 +6,6 @@
     <string name="TryAgain">Нажми, чтобы повторить</string>
     <string name="Tutor">Нажми, когда фон поменяется как можно быстрее</string>
     <string name="logo">Проверь свою реакцию</string>
-    <string name="exception_like_Result_Is_1">Либо ваша реакция 1мс, либо возникла ошибка. Обратитесь к разработчику.</string>
     <string name="Too_fast">Слишком рано! Цвет еще не поменялся</string>
     <string name="simple_reaction_is">"Ваша реакция "</string>
     <string name="ms">" мс"</string>

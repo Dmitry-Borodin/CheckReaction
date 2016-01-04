@@ -1,23 +1,23 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="#0099cc"
-    tools:context="com.two_two.checkreaction.TestActivity"
-    android:id="@+id/TestLayout">
+    tools:context=".reactiontest.TestActivity"
+    android:id="@+id/ac_test_main_layout">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/testing_string_ready"
-        android:id="@+id/textCenterCommandToStart"
+        android:id="@+id/ac_test_center_text"
         android:layout_gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="you will not see this text"
-        android:id="@+id/textDownSmall"
+        tools:text="you will not see this text"
+        android:id="@+id/ac_test_down_tips"
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

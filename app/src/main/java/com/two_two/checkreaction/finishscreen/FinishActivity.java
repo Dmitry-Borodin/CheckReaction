@@ -34,9 +34,11 @@ public class FinishActivity extends Activity {
             mResultView.setText(getString(R.string.Too_fast));
         } else {
             switch (mTestResult.getTestType()){
-                case SIMPLE_TEST: mResultView.setText(getString(R.string.simple_reaction_is) + mTestResult.getAverage() + getString(R.string.ms));
+                case SIMPLE_TEST: mResultView.setText(getString(R.string.simple_reaction_is) +
+                        mTestResult.getAverage() + getString(R.string.ms));
                     break;
-                case COMPLEX_TEST: mResultView.setText(getString(R.string.complex_reaction_is) + mTestResult.getAverage() + getString(R.string.ms));
+                case COMPLEX_TEST: mResultView.setText(getString(R.string.complex_reaction_is) +
+                        mTestResult.getAverage() + getString(R.string.ms));
                     break;
                 default:
                     Log.e(TAG,"error in onTouch switch - default working");

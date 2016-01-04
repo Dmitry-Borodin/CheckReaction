@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.two_two.checkreaction" >
 
+    <!--for crashLytics-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Halo" >
         <activity
-            android:name=".startscreen.StartActivity"
-            android:label="@string/app_name">
+            android:name=".startscreen.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,8 +19,7 @@
         </activity>
         <activity
             android:name=".reactiontest.TestActivity"
-            android:parentActivityName=".startscreen.StartActivity"
-            >
+            android:parentActivityName=".startscreen.StartActivity" >
                 <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".startscreen.StartActivity" />
@@ -26,7 +27,10 @@
         <activity
             android:name=".finishscreen.FinishActivity"
             android:parentActivityName=".startscreen.StartActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask" >
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="b6c8885fa885272bfabda2768aa069255689742b" />
     </application>
 </manifest>

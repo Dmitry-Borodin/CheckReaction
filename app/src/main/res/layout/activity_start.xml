@@ -1,21 +1,21 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".startscreen.StartActivity"
+    tools:context=".startscreen.StartActivity"
     android:id="@+id/StActivity"
-    android:background="#cf8ac1c0">
+    android:background="@color/ac_background"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/logo"
         android:id="@+id/ac_start_title_text"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:gravity="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,12 +23,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/Tutor"
         android:id="@+id/ac_start_text_tutorial"
-        android:layout_marginTop="53dp"
-        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_big"
         android:textStyle="normal"
-        android:layout_below="@+id/ac_start_title_text"
-        android:layout_centerHorizontal="true"
-        android:gravity="center" />
+        android:gravity="center"/>
 
     <Button
         android:layout_width="200dp"
@@ -36,8 +33,7 @@
         android:text="@string/simple_test_button"
         android:id="@+id/ac_start_simple_button"
         android:onClick="onClickSimpleTest"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="@dimen/margin_medium"/>
 
     <Button
         android:layout_width="200dp"
@@ -45,8 +41,6 @@
         android:text="@string/complex_test_button"
         android:id="@+id/ac_start_complex_button"
         android:onClick="onClickComplexTest"
-        android:layout_below="@+id/ac_start_simple_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="@dimen/margin_medium"/>
 
-</RelativeLayout>
+</LinearLayout>

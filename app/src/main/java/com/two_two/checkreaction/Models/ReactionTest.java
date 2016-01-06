@@ -16,7 +16,7 @@ public final class ReactionTest {
     private static final String TAG = "ReactionTest";
     private final TestType mTestType;
     private boolean mRunned = false;
-    private boolean isTapWaited = false;
+    private boolean mIsTapWaited = false;
     private DelayTimer mDelayTimer = new DelayTimer();
     private UiPresenter mPresenter;
     private long mCurrentTime;
@@ -53,9 +53,9 @@ public final class ReactionTest {
             Log.e(TAG, "onTap called, but test did not run");
             return;
         }
-        if (isTapWaited) {
+        if (mIsTapWaited) {
             onTapWaited();
-            isTapWaited = false;
+            mIsTapWaited = false;
         }else {
             buildFailResults();
         }
@@ -77,7 +77,7 @@ public final class ReactionTest {
         mDelayTimer.runDelayed(() -> {
             mCurrentTime = System.currentTimeMillis();
             mPresenter.waitingForTap();
-            isTapWaited = true;
+            mIsTapWaited = true;
         });
     }
 
@@ -91,7 +91,8 @@ public final class ReactionTest {
     private void buildSuccessResults() {
         mRunned = false;
         long avg = calcAverageReaction();
-        mPresenter.testFinished(new TestResult(avg, false, mTestType));
+        boolean isFailed = false;
+        mPresenter.testFinished(new TestResult(avg, isFailed, mTestType));
     }
 
     private long calcAverageReaction() {

@@ -4,7 +4,7 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_finish">FinishActivity</string>
     <string name="TryAgain">Tap to try again</string>
-    <string name="Tutor">Tap when colout changes as fast as you can</string>
+    <string name="Tutor">Tap when color changes, as fast as you can</string>
     <string name="logo">Check your Reaction!</string>
     <string name="Too_fast">You typed before it changed colour</string>
     <string name="simple_reaction_is">"Your reaction is "</string>

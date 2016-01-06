@@ -2,7 +2,6 @@ package com.two_two.checkreaction.reactiontest;
 
 import android.content.Context;
 
-import com.two_two.checkreaction.models.ReactionTest;
 import com.two_two.checkreaction.models.TestResult;
 import com.two_two.checkreaction.models.TestType;
 
@@ -11,13 +10,13 @@ import com.two_two.checkreaction.models.TestType;
  */
 public interface TestContract {
 
-    public interface View {
+    interface View {
         void setWait(int testNumber, int maxTests);
         void setReadyToTouch(int backgroundColor);
         void showResult(TestResult result);
     }
 
-    public interface Presenter {
+    interface Presenter {
         void initialize(TestType test, Context context);
         void viewTouched();
         void registerActivity(View activity);

@@ -18,7 +18,8 @@ public final class DelayTimer {
         new Handler().postDelayed(delayed::wakeup, getRandomTime());
     }
 
-    private int getRandomTime(){
+    private int getRandomTime() {
+        //two randoms to more nice delay distribution - less possible min delay
         return mRandom.nextInt(RANDOM_DELAY1) + mRandom.nextInt(RANDOM_DELAY2) + MIN_DELAY;
     }
 

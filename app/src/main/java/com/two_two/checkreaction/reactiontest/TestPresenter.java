@@ -2,12 +2,11 @@ package com.two_two.checkreaction.reactiontest;
 
 import android.content.Context;
 
-import com.two_two.checkreaction.Utils.ColorGenerator;
+import com.two_two.checkreaction.utils.ColorGenerator;
 import com.two_two.checkreaction.models.ReactionTest;
 import com.two_two.checkreaction.models.TestResult;
 import com.two_two.checkreaction.models.TestType;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 

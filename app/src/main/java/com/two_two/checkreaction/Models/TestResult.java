@@ -10,17 +10,23 @@ public final class TestResult implements Parcelable {
 
     public static final String TAG = "TestResult";
     private final long mAverage;
+    private final long mMedian;
     private final boolean mIsFailed;
     private final TestType mTestType;
 
-    public TestResult(long averageReaction, boolean isFailed, TestType testType) {
+    public TestResult(long averageReaction, long medianReaction, boolean isFailed, TestType testType) {
         this.mAverage = averageReaction;
+        this.mMedian = medianReaction;
         this.mIsFailed = isFailed;
         this.mTestType = testType;
     }
 
     public long getAverage() {
         return mAverage;
+    }
+
+    public long getmMedian() {
+        return mMedian;
     }
 
     public boolean isFailed() {
@@ -41,15 +47,17 @@ public final class TestResult implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.mAverage);
+        dest.writeLong(this.mMedian);
         dest.writeByte(mIsFailed ? (byte) 1 : (byte) 0);
         dest.writeInt(this.mTestType == null ? -1 : this.mTestType.ordinal());
     }
 
     protected TestResult(Parcel in) {
         this.mAverage = in.readLong();
+        this.mMedian = in.readLong();
         this.mIsFailed = in.readByte() != 0;
-        int tmpTestType = in.readInt();
-        this.mTestType = tmpTestType == -1 ? null : TestType.values()[tmpTestType];
+        int tmpMTestType = in.readInt();
+        this.mTestType = tmpMTestType == -1 ? null : TestType.values()[tmpMTestType];
     }
 
     public static final Creator<TestResult> CREATOR = new Creator<TestResult>() {

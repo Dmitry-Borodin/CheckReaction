@@ -1,6 +1,8 @@
 package com.two_two.checkreaction.models;
 
 import android.util.Log;
+
+import java.io.InvalidObjectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,16 +85,17 @@ public final class ReactionTest {
 
     private void buildFailResults() {
         mRunned = false;
-        long avg = 0; //test filed, no results
+        long noResult = 0; //test filed, no results
         boolean isFailed = true;
-        mPresenter.testFinished(new TestResult(avg, isFailed, mTestType));
+        mPresenter.testFinished(new TestResult(noResult, noResult, isFailed, mTestType));
     }
 
     private void buildSuccessResults() {
         mRunned = false;
         long avg = calcAverageReaction();
-        boolean isFailed = false;
-        mPresenter.testFinished(new TestResult(avg, isFailed, mTestType));
+        long median = calcMedianReaction();
+        boolean noFailed = false;
+        mPresenter.testFinished(new TestResult(avg, median, noFailed, mTestType));
     }
 
     private long calcAverageReaction() {
@@ -100,6 +103,17 @@ public final class ReactionTest {
         for (Long l: mResultList) avg+=l;
         avg = avg / mResultList.size();
         return avg;
+    }
+
+    //If there is middle element - it is median, else - average for 2 middle elements
+    private long calcMedianReaction() {
+        if (mResultList.size()%2 == 1) {
+            return mResultList.get(mResultList.size() / 2 + 1);
+        }else {
+            long m1 = mResultList.get(mResultList.size() / 2);
+            long m2 = mResultList.get(mResultList.size() / 2 + 1);
+            return (m1 + m2) / 2;
+        }
     }
 
     //*******************************************************

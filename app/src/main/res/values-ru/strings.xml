@@ -17,4 +17,5 @@
     <string name="testing_string_ready">Приготовься!</string>
     <string name="Iteration">"Попытка "</string>
     <string name="from">" из "</string>
+    <string name="ac_finish_your_median_result">"\n Ваш медианный результат "</string>
 </resources>

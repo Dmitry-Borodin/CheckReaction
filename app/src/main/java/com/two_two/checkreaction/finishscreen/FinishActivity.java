@@ -38,7 +38,8 @@ public class FinishActivity extends Activity {
                         mTestResult.getAverage() + getString(R.string.ms));
                     break;
                 case COMPLEX_TEST: mResultView.setText(getString(R.string.complex_reaction_is) +
-                        mTestResult.getAverage() + getString(R.string.ms));
+                        mTestResult.getAverage() +  getString(R.string.ms)
+                + getString(R.string.ac_finish_your_median_result) + mTestResult.getMedian() + getString(R.string.ms));
                     break;
                 default:
                     Log.e(TAG,"error in onTouch switch - default working");

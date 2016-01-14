@@ -17,7 +17,5 @@
     <string name="testing_string_ready">Ready!</string>
     <string name="Iteration">"Iteration "</string>
     <string name="from">" from "</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ac_finish_your_median_result">"\n Your median reaction is "</string>
 </resources>

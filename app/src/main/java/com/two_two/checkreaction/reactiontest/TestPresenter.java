@@ -18,7 +18,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     private static volatile TestPresenter sInstance;
     private ReactionTest mReactionTest;
     private ColorGenerator mColorGenerator;
-    private Set<TestContract.View> mActivityList = new HashSet<>();
+    private Set<TestContract.View> mActivitySet = new HashSet<>();
 
     public static TestPresenter getInstance() {
         TestPresenter instance = sInstance;
@@ -53,12 +53,12 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
 
     @Override
     public void registerActivity(TestContract.View activity) {
-        mActivityList.add(activity);
+        mActivitySet.add(activity);
     }
 
     @Override
     public void unregisterActivity(TestContract.View activity) {
-        mActivityList.remove(activity);
+        mActivitySet.remove(activity);
     }
 
     //*******************************************************
@@ -69,14 +69,14 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     @Override
     public void waitingForTap() {
         int color = mColorGenerator.getNextColor();
-        for (TestContract.View activity: mActivityList) {
+        for (TestContract.View activity: mActivitySet) {
             activity.setReadyToTouch(color);
         }
     }
 
     @Override
     public void testFinished(TestResult result) {
-        for (TestContract.View activity: mActivityList) {
+        for (TestContract.View activity: mActivitySet) {
             activity.showResult(result);
         }
         mReactionTest = null;
@@ -84,7 +84,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
 
     @Override
     public void waitForNextTest(int iteration, int maxAttempts) {
-        for (TestContract.View activity: mActivityList) {
+        for (TestContract.View activity: mActivitySet) {
             activity.setWait(iteration, maxAttempts);
         }
     }

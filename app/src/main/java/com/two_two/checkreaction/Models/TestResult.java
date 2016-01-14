@@ -25,7 +25,7 @@ public final class TestResult implements Parcelable {
         return mAverage;
     }
 
-    public long getmMedian() {
+    public long getMedian() {
         return mMedian;
     }
 

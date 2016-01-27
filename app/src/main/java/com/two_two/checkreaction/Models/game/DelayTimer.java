@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.models;
+package com.two_two.checkreaction.models.game;
 
 import android.os.Handler;
 

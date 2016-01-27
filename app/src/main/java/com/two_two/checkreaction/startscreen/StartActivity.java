@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.crashlytics.android.Crashlytics;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.models.TestType;
+import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.reactiontest.TestActivity;
 import io.fabric.sdk.android.Fabric;
 

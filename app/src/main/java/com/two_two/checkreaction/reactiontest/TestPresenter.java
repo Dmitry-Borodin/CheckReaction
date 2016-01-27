@@ -3,9 +3,9 @@ package com.two_two.checkreaction.reactiontest;
 import android.content.Context;
 
 import com.two_two.checkreaction.utils.ColorGenerator;
-import com.two_two.checkreaction.models.ReactionTest;
-import com.two_two.checkreaction.models.TestResult;
-import com.two_two.checkreaction.models.TestType;
+import com.two_two.checkreaction.models.game.ReactionTest;
+import com.two_two.checkreaction.models.game.TestResult;
+import com.two_two.checkreaction.models.game.TestType;
 
 import java.util.HashSet;
 import java.util.Set;

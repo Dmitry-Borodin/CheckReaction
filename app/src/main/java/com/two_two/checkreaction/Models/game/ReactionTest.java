@@ -1,8 +1,7 @@
-package com.two_two.checkreaction.models;
+package com.two_two.checkreaction.models.game;
 
 import android.util.Log;
 
-import java.io.InvalidObjectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public final class ReactionTest {
     private DelayTimer mDelayTimer = new DelayTimer();
     private UiPresenter mPresenter;
     private long mCurrentTime;
-    private int mIteration = 0;
+    private int mIteration = 1;
     private List<Long> mResultList = new ArrayList<>();
 
     //*******************************************************
@@ -40,6 +39,7 @@ public final class ReactionTest {
     //*******************************************************
     // Section: public
     //*******************************************************
+
     public void startTest(UiPresenter presenter) {
         if (mRunned) {
             throw new RuntimeException("startTest called but already run");
@@ -67,7 +67,7 @@ public final class ReactionTest {
         long reaction = System.currentTimeMillis() - mCurrentTime;
         mResultList.add(reaction);
         mIteration++;
-        if (mIteration < mTestType.getMaxAttempts()) {
+        if (mIteration <= mTestType.getMaxAttempts()) {
             nextTest();
             mPresenter.waitForNextTest(mIteration, mTestType.getMaxAttempts());
         } else {

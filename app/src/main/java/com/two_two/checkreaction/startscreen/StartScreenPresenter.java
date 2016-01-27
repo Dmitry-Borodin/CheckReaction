@@ -1,6 +1,6 @@
 package com.two_two.checkreaction.startscreen;
 
-import com.two_two.checkreaction.models.TestType;
+import com.two_two.checkreaction.models.game.TestType;
 
 import java.util.ArrayList;
 

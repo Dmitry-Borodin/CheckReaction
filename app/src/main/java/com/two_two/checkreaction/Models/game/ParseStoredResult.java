@@ -5,22 +5,31 @@ import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.two_two.checkreaction.models.LocalStorage;
 
 /**
  * Created by Dmitry Borodin on 27.01.2016.
  */
 
 @ParseClassName("ParseTestResults")
-public class ParseTestResult extends ParseObject {
+public class ParseStoredResult extends ParseObject {
 
     private static final String USERNAME = "username";
     private static final String AVERAGE = "average";
     private static final String MEDIAN = "median";
     private static final String TESTTYPE = "testType";
-    private static final Integer VERSION = 1;
+    private static final String VERSION = "version";
+    private static final Integer VERSION_VALUE = 1;
 
-    public ParseTestResult(TestResult testResult) {
+    public ParseStoredResult(TestResult testResult) {
 
+        if (testResult.isFailed()) throw new RuntimeException("Can't store failed results");
+
+        setVersion();
+        setUserName(LocalStorage.getUsername());
+        setAverage(testResult.getAverage());
+        setMedian(testResult.getMedian());
+        setTesttypeString(testResult.getTestType().toString());
     }
 
     //*******************************************************
@@ -51,15 +60,23 @@ public class ParseTestResult extends ParseObject {
     }
 
     public String getTesttypeString() {
-        return getString(USERNAME);
+        return getString(TESTTYPE);
     }
 
     private void setTesttypeString(String value) {
-        put(USERNAME, value);
+        put(TESTTYPE, value);
+    }
+
+    public int getVersion() {
+        return getInt(VERSION);
+    }
+
+    private void setVersion() {
+        put(VERSION, VERSION_VALUE);
     }
 
 
-//    public static ParseQuery<ParseTestResult> getQuery() {
-//        return ParseQuery.getQuery(ParseTestResult.class);
+//    public static ParseQuery<ParseStoredResult> getQuery() {
+//        return ParseQuery.getQuery(ParseStoredResult.class);
 //    }
 }

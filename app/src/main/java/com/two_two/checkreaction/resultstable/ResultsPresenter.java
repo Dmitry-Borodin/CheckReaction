@@ -1,8 +1,7 @@
 package com.two_two.checkreaction.resultstable;
 
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.two_two.checkreaction.models.game.ParseTestResult;
+import com.two_two.checkreaction.models.game.ParseStoredResult;
 import com.two_two.checkreaction.startscreen.StartActivityContract;
 
 import java.util.ArrayList;
@@ -38,12 +37,6 @@ public class ResultsPresenter {
 
     public void unregisterActivity(StartActivityContract activity) {
         mCurrentActivity.remove(activity);
-    }
-
-    public List<ParseTestResult> getResults () {
-        ParseQuery<ParseTestResult> query = new ParseQuery<ParseTestResult>();
-        query.whereGreaterThan()
-                .where
     }
 
 }

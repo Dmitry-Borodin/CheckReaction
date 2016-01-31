@@ -18,3 +18,9 @@
 
 #for retrolambda
 -dontwarn java.lang.invoke.*
+
+#Fabric.io crashlytics
+-keepattributes SourceFile,LineNumberTable
+-keepattributes *Annotation*
+-keep public class * extends java.lang.Exception
+-printmapping mapping.txt

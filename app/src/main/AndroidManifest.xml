@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.two_two.checkreaction" >
-    <!--for crashLytics-->
+    <!--for crashLytics and firebase-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -30,8 +30,11 @@
             android:parentActivityName=".startscreen.StartActivity"
             android:launchMode="singleTask" >
         </activity>
+
+        <!-- put your value here-->
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="b6c8885fa885272bfabda2768aa069255689742b" />
+            android:value="@string/fabric.io_key" />
+        
     </application>
 </manifest>

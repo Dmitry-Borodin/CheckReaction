@@ -34,7 +34,7 @@
         <!-- put your value here-->
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="@string/fabric.io_key" />
-        
+            android:value="b6c8885fa885272bfabda2768aa069255689742b" />
+
     </application>
 </manifest>

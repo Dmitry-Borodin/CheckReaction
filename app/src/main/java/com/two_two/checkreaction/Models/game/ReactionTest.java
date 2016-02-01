@@ -2,6 +2,8 @@ package com.two_two.checkreaction.models.game;
 
 import android.util.Log;
 
+import com.two_two.checkreaction.models.LocalData;
+
 import java.util.ArrayList;
 import java.util.List;
 

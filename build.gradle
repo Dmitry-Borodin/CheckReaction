@@ -16,3 +16,14 @@ allprojects {
         jcenter()
     }
 }
+//versions
+ext {
+    // App dependencies
+    firebaseVersion = '2.5.0+'
+    crashlyticsVersion = '2.5.5@aar'
+    fibaseUiVersion = '0.2.2'
+    junitVersion = '4.12'
+    runnerVersion = '0.4.1'
+    rulesVersion = '0.4.1'
+    espressoVersion = '2.2.1'
+}

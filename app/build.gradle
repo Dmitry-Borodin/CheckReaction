@@ -29,6 +29,13 @@ android {
         versionCode 9
         versionName "1.7"
     }
+
+    //Firebase repo addresses
+    buildTypes.each {
+        it.buildConfigField 'String', 'FIREBASE_ROOT', '"https://checkreaction-base.firebaseio.com/"'
+        it.buildConfigField 'String', 'FIREBASE_GAMESCORES', '"gamescores"'
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -40,6 +47,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //for Firebase
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -49,4 +62,7 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
         transitive = true;
     }
+
+    testCompile 'junit:junit:4.12'
+
 }

@@ -1,15 +1,15 @@
 package com.two_two.checkreaction.models.firebase;
 
 import com.firebase.client.Firebase;
-import com.two_two.checkreaction.R;
+import com.firebase.client.ServerValue;
+import com.firebase.client.annotations.NotNull;
+import com.two_two.checkreaction.BuildConfig;
 
-/**
- * Adds new record score to remote database if needed.
- */
+
 public class FirebaseSender {
 
     private static volatile FirebaseSender sInstance;
-    private FirebaseComplexTestResult mComplexTestResult;
+    private FirebaseComplexResult mComplexTestResult;
 
     public static FirebaseSender getInstance() {
         FirebaseSender instance = sInstance;
@@ -24,13 +24,17 @@ public class FirebaseSender {
         return instance;
     }
 
-    public void updateResult(FirebaseComplexTestResult testResult) {
-        if (mComplexTestResult.equals(testResult)) return;
+    /**
+     * Adds new record score to remote database if needed.
+     */
+    public void updateResult(@NotNull FirebaseComplexResult testResult) {
+        if (mComplexTestResult != null && mComplexTestResult.equals(testResult)) return;
         else mComplexTestResult = testResult;
 
-        Firebase fb = new Firebase(R.string.firebase_root_url).child(R.string.firebase_gamescores);
+        Firebase fb = new Firebase(BuildConfig.FIREBASE_ROOT).child(BuildConfig.FIREBASE_GAMESCORES);
         fb = fb.push(); //new line in db
         fb.setValue(testResult);
+        fb.child("timestamp").setValue(ServerValue.TIMESTAMP);
 
     }
 }

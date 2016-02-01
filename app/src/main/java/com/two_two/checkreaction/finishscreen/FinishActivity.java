@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
+import com.two_two.checkreaction.models.App;
+import com.two_two.checkreaction.models.firebase.FirebaseComplexResult;
+import com.two_two.checkreaction.models.firebase.FirebaseSender;
 import com.two_two.checkreaction.models.game.TestResult;
 import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.reactiontest.TestActivity;
@@ -34,18 +37,28 @@ public class FinishActivity extends Activity {
             mResultView.setText(getString(R.string.Too_fast));
         } else {
             switch (mTestResult.getTestType()){
-                case SIMPLE_TEST: mResultView.setText(getString(R.string.simple_reaction_is) +
-                        mTestResult.getAverage() + getString(R.string.ms));
+                case SIMPLE_TEST:
+                    mResultView.setText(getString(R.string.simple_reaction_is) + mTestResult.getAverage() + getString(R.string.ms));
                     break;
-                case COMPLEX_TEST: mResultView.setText(getString(R.string.complex_reaction_is) +
-                        mTestResult.getAverage() +  getString(R.string.ms)
-                + getString(R.string.ac_finish_your_median_result) + mTestResult.getMedian() + getString(R.string.ms));
+                case COMPLEX_TEST:
+                    mResultView.setText(getString(R.string.complex_reaction_is) +
+                            mTestResult.getAverage() + getString(R.string.ms)
+                            + getString(R.string.ac_finish_your_median_result) +
+                            mTestResult.getMedian() + getString(R.string.ms));
+                    updateComplexTestResult();
                     break;
                 default:
                     Log.e(TAG,"error in onTouch switch - default working");
                     mResultView.setText(getString(R.string.ErrorInTestTypeSwitch));
             }
         }
+    }
+
+    private void updateComplexTestResult() {
+        final String username = App.getInstance().getLocalData().getUsername();
+        FirebaseComplexResult result = new FirebaseComplexResult(mTestResult.getAverage(),
+                mTestResult.getMedian(), username);
+        FirebaseSender.getInstance().updateResult(result);
     }
 
     @Override

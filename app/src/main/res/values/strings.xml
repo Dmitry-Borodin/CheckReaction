@@ -18,4 +18,5 @@
     <string name="Iteration">"Iteration "</string>
     <string name="from">" from "</string>
     <string name="ac_finish_your_median_result">"\n Your median reaction is "</string>
+    <string name="username_hint">Name for score list</string>
 </resources>

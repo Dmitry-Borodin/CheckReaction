@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * Created by Dmitry Borodin on 27.01.2016.
+ * Provide local persistance.
+ * This class will be provided by Application. In this small project testing disadvantage is not
+ * significant. DI not used for demo purposes.
  */
 public final class LocalData {
 

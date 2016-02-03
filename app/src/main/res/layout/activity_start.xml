@@ -43,4 +43,16 @@
         android:onClick="onClickComplexTest"
         android:layout_marginTop="@dimen/margin_medium"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_mid_low"
+        android:text="@string/username_hint"/>
+    <EditText
+        android:layout_width="@dimen/edittext_width"
+        android:layout_height="wrap_content"
+        android:id="@+id/ac_start_username_edittext"
+        android:gravity="center"
+        tools:text="user"/>
+
 </LinearLayout>

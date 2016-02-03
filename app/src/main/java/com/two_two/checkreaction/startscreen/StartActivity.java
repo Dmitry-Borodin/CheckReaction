@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.two_two.checkreaction.R;
+import com.two_two.checkreaction.models.App;
 import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.reactiontest.TestActivity;
 
@@ -13,11 +15,14 @@ import com.two_two.checkreaction.reactiontest.TestActivity;
 public class StartActivity extends Activity implements StartActivityContract {
 
     private StartScreenPresenter mPresenter;
+    private EditText mUsernameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        mUsernameText = (EditText) findViewById(R.id.ac_start_username_edittext);
+        mUsernameText.setText(App.getInstance().getLocalData().getUsername());
         mPresenter = StartScreenPresenter.getInstance();
     }
 
@@ -42,11 +47,16 @@ public class StartActivity extends Activity implements StartActivityContract {
 
     //method defined in activity XML
     public void onClickSimpleTest(View view){
+        saveUsername();
         mPresenter.startSimpleTest();
     }
 
     public void onClickComplexTest(View view){
+        saveUsername();
         mPresenter.startComplexTest();
     }
 
+    private void saveUsername() {
+        mPresenter.saveUsername(mUsernameText.getText().toString().trim());
+    }
 }

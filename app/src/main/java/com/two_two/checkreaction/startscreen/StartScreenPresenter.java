@@ -1,5 +1,7 @@
 package com.two_two.checkreaction.startscreen;
 
+import com.two_two.checkreaction.models.App;
+import com.two_two.checkreaction.models.LocalData;
 import com.two_two.checkreaction.models.game.TestType;
 
 import java.util.ArrayList;
@@ -43,6 +45,20 @@ public class StartScreenPresenter {
 
     public void startComplexTest(){
         notifyStartTest(TestType.COMPLEX_TEST);
+    }
+
+    /**
+     * If username is valid, this will be used in global score results in the cloud.
+     * If not valid, nothing happens, previous or default name will remain.
+     * @param username name to save
+     */
+    public void saveUsername(String username) {
+        if (isUsernameCurrect(username))   App.getInstance().getLocalData().setUsername(username);
+    }
+
+    private boolean isUsernameCurrect(String username) {
+        if (username.isEmpty() || username.length() > 100) return false;
+        return true;
     }
 
     private void notifyStartTest(TestType testType) {

@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="margin_medium">30dp</dimen>
     <dimen name="margin_big">50dp</dimen>
+    <dimen name="margin_mid_low">20dp</dimen>
+    <dimen name="edittext_width">250dp</dimen>
 </resources>

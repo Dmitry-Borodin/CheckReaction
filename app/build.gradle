@@ -63,7 +63,7 @@ dependencies {
         transitive = true;
     }
 
-    testCompile "junit:junit:$rootProject.ext.junitVersin"
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
 
     // Android Testing Support Library's runner and rules
     androidTestCompile "com.android.support.test:runner:$rootProject.ext.runnerVersion"

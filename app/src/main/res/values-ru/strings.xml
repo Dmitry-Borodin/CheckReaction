@@ -20,7 +20,6 @@
     <string name="ac_finish_your_median_result">"\n медианный результат "</string>
     <string name="score_average">средний</string>
     <string name="score_median">медианный</string>
-    <string name="score_number"></string>
     <string name="score_username">псевдоним</string>
     <string name="username_hint">Имя для рейтинга</string>
     <string name="open_leader_board">Смотреть рейтинг</string>

@@ -26,7 +26,7 @@ android {
         applicationId "com.two_two.checkreaction"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 10
+        versionCode 11
         versionName "2.0"
     }
 
@@ -39,6 +39,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources  true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

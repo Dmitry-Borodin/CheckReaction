@@ -12,11 +12,16 @@
     <string name="ms">" ms"</string>
     <string name="ErrorInTestTypeSwitch">There is an error in currentTestType switch. Please contact developer.</string>
     <string name="simple_test_button">Simple test</string>
-    <string name="complex_test_button">Complex test</string>
+    <string name="complex_test_button">Complex test with leader board</string>
     <string name="testing_command_tap">TAP!</string>
     <string name="testing_string_ready">Ready!</string>
     <string name="Iteration">"Iteration "</string>
     <string name="from">" from "</string>
-    <string name="ac_finish_your_median_result">"\n Your median reaction is "</string>
-    <string name="username_hint">Name for score list</string>
+    <string name="ac_finish_your_median_result">"\n median reaction is "</string>
+    <string name="username_hint">Name for leader board</string>
+    <string name="score_number" translatable="false">№</string>
+    <string name="score_username">username</string>
+    <string name="score_median">median</string>
+    <string name="score_average">average</string>
+    <string name="open_leader_board">Open leader board</string>
 </resources>

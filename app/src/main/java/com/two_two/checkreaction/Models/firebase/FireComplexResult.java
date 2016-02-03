@@ -1,9 +1,15 @@
 package com.two_two.checkreaction.models.firebase;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * POJO for storing results of complex test in firebase
  */
-public class FirebaseComplexResult {
+public class FireComplexResult implements Parcelable {
+
+    public static final String MEDIAN = "median";
+    public static final String TAG = "FireComplexResult";
 
     //breaking AOSP naming policy for more nice getters names since Firebase have strict
     // requirements about that.
@@ -13,7 +19,7 @@ public class FirebaseComplexResult {
     //doesn't participate in equials because it will fill up only in firebase cloud.
     private long timestamp;
 
-    public FirebaseComplexResult(long average, long median, String username) {
+    public FireComplexResult(long average, long median, String username) {
         this.average = average;
         this.median = median;
         this.username = username;
@@ -23,7 +29,7 @@ public class FirebaseComplexResult {
     * This constructor for Firebase use. There is no reason to use it manually.
      */
     @Deprecated
-    public FirebaseComplexResult() {
+    public FireComplexResult() {
     }
 
     //*******************************************************
@@ -51,7 +57,7 @@ public class FirebaseComplexResult {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FirebaseComplexResult that = (FirebaseComplexResult) o;
+        FireComplexResult that = (FireComplexResult) o;
 
         if (average != that.average) return false;
         if (median != that.median) return false;
@@ -65,4 +71,39 @@ public class FirebaseComplexResult {
         result = 31 * result + (int) (median ^ (median >>> 32));
         return result;
     }
+
+    //*******************************************************
+    // Section: Parcelable
+    //*******************************************************
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(this.average);
+        dest.writeLong(this.median);
+        dest.writeString(this.username);
+        dest.writeLong(this.timestamp);
+    }
+
+    protected FireComplexResult(Parcel in) {
+        this.average = in.readLong();
+        this.median = in.readLong();
+        this.username = in.readString();
+        this.timestamp = in.readLong();
+    }
+
+    public static final Creator<FireComplexResult> CREATOR = new Creator<FireComplexResult>() {
+        public FireComplexResult createFromParcel(Parcel source) {
+            return new FireComplexResult(source);
+        }
+
+        public FireComplexResult[] newArray(int size) {
+            return new FireComplexResult[size];
+        }
+    };
 }

@@ -30,6 +30,10 @@
             android:parentActivityName=".startscreen.StartActivity"
             android:launchMode="singleTask" >
         </activity>
+        <activity
+            android:name=".gamescore.GameScoreActivity"
+            android:parentActivityName=".startscreen.StartActivity" >
+        </activity>
 
         <!-- put your value here-->
         <meta-data

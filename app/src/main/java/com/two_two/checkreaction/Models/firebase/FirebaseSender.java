@@ -4,12 +4,13 @@ import com.firebase.client.Firebase;
 import com.firebase.client.ServerValue;
 import com.firebase.client.annotations.NotNull;
 import com.two_two.checkreaction.BuildConfig;
+import com.two_two.checkreaction.utils.Constants;
 
 
 public class FirebaseSender {
 
     private static volatile FirebaseSender sInstance;
-    private FirebaseComplexResult mComplexTestResult;
+    private FireComplexResult mComplexTestResult;
 
     public static FirebaseSender getInstance() {
         FirebaseSender instance = sInstance;
@@ -27,14 +28,14 @@ public class FirebaseSender {
     /**
      * Adds new record score to remote database if needed.
      */
-    public void updateResult(@NotNull FirebaseComplexResult testResult) {
+    public void updateResult(@NotNull FireComplexResult testResult) {
         if (mComplexTestResult != null && mComplexTestResult.equals(testResult)) return;
         else mComplexTestResult = testResult;
 
         Firebase fb = new Firebase(BuildConfig.FIREBASE_ROOT).child(BuildConfig.FIREBASE_GAMESCORES);
         fb = fb.push(); //new line in db
         fb.setValue(testResult);
-        fb.child("timestamp").setValue(ServerValue.TIMESTAMP);
+        fb.child(Constants.TIMESTAMP).setValue(ServerValue.TIMESTAMP);
 
     }
 }

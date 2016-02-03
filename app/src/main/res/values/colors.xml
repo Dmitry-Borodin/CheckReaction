@@ -8,5 +8,8 @@
     <color name="test4">#F44336</color>
     <color name="test5">#2196F3</color>
     <color name="test6">#FFC107</color>
-    <color name="ac_background">#cf8ac1c0</color>
+    <color name="ac_background_old">#cf8ac1c0</color>
+    <color name="ac_background">#d2d67820</color>
+    <color name="header_background">#212121</color>
+    <color name="header_text">#9e9d24</color>
 </resources>

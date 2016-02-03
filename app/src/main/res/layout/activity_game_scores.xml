@@ -3,8 +3,48 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0"
+        android:background="@color/header_background">
+
+        <!--header-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_score_number"
+            android:layout_weight="0.1"
+            android:text="@string/score_number"
+            android:textColor="@color/header_text"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_score_username"
+            android:layout_weight="0.4"
+            android:text="@string/score_username"
+            android:textColor="@color/header_text"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_score_median"
+            android:layout_weight="0.25"
+            android:text="@string/score_median"
+            android:textColor="@color/header_text"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_score_average"
+            android:layout_weight="0.25"
+            android:text="@string/score_average"
+            android:textColor="@color/header_text"/>
+    </LinearLayout>
+<!--end of header-->
+
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/ac_scores_list"/>
 
 </LinearLayout>

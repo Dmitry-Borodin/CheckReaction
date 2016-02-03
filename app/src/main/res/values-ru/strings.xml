@@ -9,13 +9,19 @@
     <string name="Too_fast">Слишком рано! Цвет еще не поменялся</string>
     <string name="simple_reaction_is">"Ваша реакция "</string>
     <string name="ms">" мс"</string>
-    <string name="complex_reaction_is">"Средняя реакция теста "</string>
+    <string name="complex_reaction_is">"Средняя реакция "</string>
     <string name="ErrorInTestTypeSwitch">Ошибка в currentTestType switch. Обратитесь к разработчику.</string>
     <string name="simple_test_button">Быстрый тест</string>
-    <string name="complex_test_button">Комплексный тест</string>
+    <string name="complex_test_button">Комплексный тест с рейтингом</string>
     <string name="testing_command_tap">ЖМИ!</string>
     <string name="testing_string_ready">Приготовься!</string>
     <string name="Iteration">"Попытка "</string>
     <string name="from">" из "</string>
-    <string name="ac_finish_your_median_result">"\n Ваш медианный результат "</string>
+    <string name="ac_finish_your_median_result">"\n медианный результат "</string>
+    <string name="score_average">средний</string>
+    <string name="score_median">медианный</string>
+    <string name="score_number"></string>
+    <string name="score_username">псевдоним</string>
+    <string name="username_hint">Имя для рейтинга</string>
+    <string name="open_leader_board">Смотреть рейтинг</string>
 </resources>

@@ -96,8 +96,8 @@ public final class ReactionTest {
         mRunned = false;
         long avg = calcAverageReaction();
         long median = calcMedianReaction();
-        boolean noFailed = false;
-        mPresenter.testFinished(new TestResult(avg, median, noFailed, mTestType));
+        boolean isFailed = false;
+        mPresenter.testFinished(new TestResult(avg, median, isFailed, mTestType));
     }
 
     private long calcAverageReaction() {

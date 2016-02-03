@@ -26,4 +26,13 @@
         android:id="@+id/ac_finish_try_again_text"
         android:layout_marginTop="@dimen/margin_medium"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ac_finish_rating_button"
+        android:layout_marginTop="@dimen/margin_mid_low"
+        android:padding="@dimen/button_padding"
+        android:text="@string/open_leader_board"
+        android:onClick="toRaiting"
+        android:visibility="invisible"/>
 </LinearLayout>

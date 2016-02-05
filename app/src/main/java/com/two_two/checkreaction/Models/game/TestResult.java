@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by Dmitry Borodin on 1/3/2016.
+ * Model for result for reaction test.
  */
 public final class TestResult implements Parcelable {
 

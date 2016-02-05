@@ -6,6 +6,8 @@ import java.util.Random;
 
 /**
  * Created by Dmitry Borodin on 1/4/2016.
+ * Manually configured delay timer.
+ * Runs provided code after random delay with preconfigured settings.
  */
 public final class DelayTimer {
 
@@ -15,7 +17,7 @@ public final class DelayTimer {
     private final Random mRandom = new Random();
 
     public void runDelayed(final Delayed delayed) {
-        new Handler().postDelayed(delayed::wakeup, getRandomTime());
+        new Handler().postDelayed(delayed::delayedCode, getRandomTime());
     }
 
     private int getRandomTime() {
@@ -24,6 +26,6 @@ public final class DelayTimer {
     }
 
     public interface Delayed {
-         void wakeup();
+         void delayedCode();
     }
 }

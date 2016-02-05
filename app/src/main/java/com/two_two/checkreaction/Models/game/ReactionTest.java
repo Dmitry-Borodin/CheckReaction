@@ -2,13 +2,11 @@ package com.two_two.checkreaction.models.game;
 
 import android.util.Log;
 
-import com.two_two.checkreaction.models.LocalData;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Dmitry Borodin on 1/3/2016.
+ * Model for reaction test itself.
  */
 public final class ReactionTest {
 
@@ -39,12 +37,12 @@ public final class ReactionTest {
     }
 
     //*******************************************************
-    // Section: public
+    // Section: public methods
     //*******************************************************
 
     public void startTest(UiPresenter presenter) {
         if (mRunned) {
-            throw new RuntimeException("startTest called but already run");
+            throw new RuntimeException("startTest called, but already run");
         }
         mPresenter = presenter;
         mRunned = true;

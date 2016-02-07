@@ -23,4 +23,5 @@
     <string name="score_username">псевдоним</string>
     <string name="username_hint">Имя для рейтинга</string>
     <string name="open_leader_board">Смотреть рейтинг</string>
+    <string name="error_cannot_find_result">Нет результатов теста. Пожалуйста, свяжитесь с разработчиком.</string>
 </resources>

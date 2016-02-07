@@ -40,7 +40,9 @@ public class FinishActivity extends Activity {
     protected void onStart() {
         super.onStart();
         mTestResult = getIntent().getParcelableExtra(TestResult.TAG);
-        if (mTestResult.isFailed()){
+        if (mTestResult == null) {
+            mResultView.setText(R.string.error_cannot_find_result);
+        }else if (mTestResult.isFailed()) {
             mResultView.setText(getString(R.string.Too_fast));
             showRatingButtonIfNeeded();
         } else {
@@ -93,7 +95,9 @@ public class FinishActivity extends Activity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        setIntent(intent);
+        if (intent.hasExtra(TestResult.TAG)) {
+            setIntent(intent);
+        }
     }
 }
 

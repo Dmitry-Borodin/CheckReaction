@@ -16,12 +16,15 @@ import com.two_two.checkreaction.models.firebase.FireComplexResult;
 public class ScoresListAdapter extends FirebaseListAdapter<FireComplexResult> {
 
     private FireComplexResult mCurrentResult;
+    private OnLoadListener mOnLoadListener;
+    private boolean mWasLoaded = false;
 
-    public ScoresListAdapter(Activity activity, Class<FireComplexResult> modelClass,
-                             int modelLayout, Query ref,
-                             FireComplexResult currentResult) {
-        super(activity, modelClass, modelLayout, ref);
+    public ScoresListAdapter(Activity activity, Query ref,
+                             FireComplexResult currentResult,
+                             OnLoadListener onLoadListener) {
+        super(activity, FireComplexResult.class, R.layout.item_score_result, ref);
         this.mCurrentResult = currentResult;
+        this.mOnLoadListener = onLoadListener;
     }
 
     @Override
@@ -33,8 +36,12 @@ public class ScoresListAdapter extends FirebaseListAdapter<FireComplexResult> {
         TextView median = (TextView) v.findViewById(R.id.item_score_median);
 
         if (model.equals(mCurrentResult)) v.setBackgroundColor(Color.RED);
+        if (!mWasLoaded) {
+            mWasLoaded = true;
+            mOnLoadListener.onLoaded();
+        }
 
-        int oneStartedPosition = position + 1; //winner should not have zero position
+        int oneStartedPosition = position + 1; //positions from 1, not from 0
         number.setText("" + oneStartedPosition);
         username.setText(model.getUsername());
         average.setText("" + model.getAverage());

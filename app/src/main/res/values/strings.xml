@@ -25,4 +25,6 @@
     <string name="score_average">average</string>
     <string name="open_leader_board">Open leader board</string>
     <string name="error_cannot_find_result">Cannot find test result. Please, contact developer.</string>
+    <string name="loading_title">Loading</string>
+    <string name="loading_message">Loading scores data...</string>
 </resources>

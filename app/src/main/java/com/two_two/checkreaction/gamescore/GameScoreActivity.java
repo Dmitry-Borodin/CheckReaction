@@ -1,7 +1,7 @@
 package com.two_two.checkreaction.gamescore;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -11,6 +11,7 @@ import com.two_two.checkreaction.R;
 import com.two_two.checkreaction.models.firebase.FireComplexResult;
 
 /**
+ * Showing gamescores from Firebase backend.
  * Created by Dmitry Borodin on 2/1/2016.
  */
 public class GameScoreActivity extends Activity {
@@ -27,12 +28,14 @@ public class GameScoreActivity extends Activity {
     }
 
     private void init() {
+        ProgressDialog dialog = ProgressDialog.show(this, getString(R.string.loading_title),
+                getString(R.string.loading_message));
         mList = (ListView) findViewById(R.id.ac_scores_list);
         FireComplexResult currentResult = getIntent().getParcelableExtra(FireComplexResult.TAG);
         mFirebasecores = new Firebase(BuildConfig.FIREBASE_ROOT)
                 .child(BuildConfig.FIREBASE_GAMESCORES);
-        mAdapter = new ScoresListAdapter(this, FireComplexResult.class, R.layout.item_score_result,
-                mFirebasecores.orderByChild(FireComplexResult.MEDIAN), currentResult);
+        mAdapter = new ScoresListAdapter(this, mFirebasecores.orderByChild(FireComplexResult.MEDIAN),
+                currentResult, dialog::dismiss);
         mList.setAdapter(mAdapter);
     }
 

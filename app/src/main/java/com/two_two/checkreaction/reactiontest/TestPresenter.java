@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.reactiontest;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.two_two.checkreaction.utils.ColorGenerator;
 import com.two_two.checkreaction.models.game.ReactionTest;
@@ -15,6 +16,7 @@ import java.util.Set;
  */
 public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPresenter {
 
+    private static final String TAG = "TestPresenter";
     private static volatile TestPresenter sInstance;
     private ReactionTest mReactionTest;
     private ColorGenerator mColorGenerator;
@@ -48,6 +50,10 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
 
     @Override
     public void viewTouched() {
+        if (mReactionTest == null) {
+            Log.e(TAG, "Reaction test is NULL in presenter");
+            return;
+        }
         mReactionTest.onTap();
     }
 

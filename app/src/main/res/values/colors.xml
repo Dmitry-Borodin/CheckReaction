@@ -12,4 +12,5 @@
     <color name="ac_background">#d2d67820</color>
     <color name="header_background">#212121</color>
     <color name="header_text">#9e9d24</color>
+    <color name="default_background">#0099cc</color>
 </resources>

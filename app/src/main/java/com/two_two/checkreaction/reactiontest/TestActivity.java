@@ -2,6 +2,8 @@ package com.two_two.checkreaction.reactiontest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +16,7 @@ import com.two_two.checkreaction.models.game.TestType;
 
 public class TestActivity extends Activity implements TestContract.View {
 
+    private final static String BACKGROUND = "backgroundColor";
     private TestPresenter mPresenter;
     private TextView mTextDownSmall;
     private TextView mTextInCenter;
@@ -32,6 +35,8 @@ public class TestActivity extends Activity implements TestContract.View {
             assert (testType != null);
             mPresenter.registerActivity(this);
             mPresenter.initialize(testType, getApplicationContext());
+        }else {
+            mLayout.setBackgroundColor(savedInstanceState.getInt(BACKGROUND, getResources().getColor(R.color.default_background)));
         }
     }
 
@@ -55,6 +60,16 @@ public class TestActivity extends Activity implements TestContract.View {
         }else {
             return false;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        //save current background color
+        Drawable background = mLayout.getBackground();
+        if (background instanceof ColorDrawable) {
+            outState.putInt(BACKGROUND, ((ColorDrawable) background).getColor());
+        }
+        super.onSaveInstanceState(outState);
     }
 
     //*******************************************************

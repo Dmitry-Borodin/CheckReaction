@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc"
+    android:layout_height="match_parent" android:background="@color/default_background"
     tools:context=".reactiontest.TestActivity"
     android:id="@+id/ac_test_main_layout">
 
@@ -10,7 +10,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:text="@string/testing_string_ready"
         android:id="@+id/ac_test_center_text"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:freezesText="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,6 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         tools:text="you will not see this text"
         android:id="@+id/ac_test_down_tips"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:freezesText="true" />
 
 </FrameLayout>

@@ -46,12 +46,12 @@ public class StartActivity extends Activity implements StartActivityContract {
     }
 
     //method defined in activity XML
-    public void onClickSimpleTest(View view){
+    public void onClickSimpleTest(View view) {
         saveUsername();
         mPresenter.startSimpleTest();
     }
 
-    public void onClickComplexTest(View view){
+    public void onClickComplexTest(View view) {
         saveUsername();
         mPresenter.startComplexTest();
     }

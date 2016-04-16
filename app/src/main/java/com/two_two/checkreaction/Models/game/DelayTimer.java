@@ -26,6 +26,6 @@ public final class DelayTimer {
     }
 
     public interface Delayed {
-         void delayedCode();
+        void delayedCode();
     }
 }

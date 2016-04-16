@@ -11,6 +11,7 @@ public enum TestType {
 
     public static final String TAG = "TestType";
     private final int attempts;
+
     TestType(int attempts) {
         this.attempts = attempts;
     }

@@ -25,8 +25,8 @@ public class ColorGenerator {
         return color;
     }
 
-    private int nextColor(){
-        switch (mIteration){
+    private int nextColor() {
+        switch (mIteration) {
             case 1:
                 return mContext.getResources().getColor(R.color.test1);
             case 2:

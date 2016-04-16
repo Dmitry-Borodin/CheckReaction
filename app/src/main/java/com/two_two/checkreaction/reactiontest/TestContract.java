@@ -12,14 +12,19 @@ public interface TestContract {
 
     interface View {
         void setWait(int testNumber, int maxTests);
+
         void setReadyToTouch(int backgroundColor);
+
         void showResult(TestResult result);
     }
 
     interface Presenter {
         void initialize(TestType test, Context context);
+
         void viewTouched();
+
         void registerActivity(View activity);
+
         void unregisterActivity(View activity);
     }
 }

@@ -32,7 +32,7 @@ public class FinishActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
-        mResultView = (TextView)findViewById(R.id.ac_finish_result_text);
+        mResultView = (TextView) findViewById(R.id.ac_finish_result_text);
         mRatingButton = (Button) findViewById(R.id.ac_finish_rating_button);
     }
 
@@ -42,11 +42,11 @@ public class FinishActivity extends Activity {
         mTestResult = getIntent().getParcelableExtra(TestResult.TAG);
         if (mTestResult == null) {
             mResultView.setText(R.string.error_cannot_find_result);
-        }else if (mTestResult.isFailed()) {
+        } else if (mTestResult.isFailed()) {
             mResultView.setText(getString(R.string.Too_fast));
             showRatingButtonIfNeeded();
         } else {
-            switch (mTestResult.getTestType()){
+            switch (mTestResult.getTestType()) {
                 case SIMPLE_TEST:
                     mResultView.setText(getString(R.string.simple_reaction_is) + mTestResult.getAverage() + getString(R.string.ms));
                     break;
@@ -59,7 +59,7 @@ public class FinishActivity extends Activity {
                     updateComplexTestResult();
                     break;
                 default:
-                    Log.e(TAG,"error in onTouch switch - default working");
+                    Log.e(TAG, "error in onTouch switch - default working");
                     mResultView.setText(getString(R.string.ErrorInTestTypeSwitch));
             }
         }
@@ -85,7 +85,7 @@ public class FinishActivity extends Activity {
         startActivity(intent);
     }
 
-//  defined in XML
+    //  defined in XML
     public void toRaiting(View view) {
         Intent intent = new Intent(this, GameScoreActivity.class);
         intent.putExtra(FireComplexResult.TAG, mFireResult);

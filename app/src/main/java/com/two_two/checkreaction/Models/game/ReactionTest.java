@@ -58,7 +58,7 @@ public final class ReactionTest {
         if (mIsTapWaited) {
             onTapWaited();
             mIsTapWaited = false;
-        }else {
+        } else {
             buildFailResults();
         }
     }
@@ -71,7 +71,7 @@ public final class ReactionTest {
             nextTest();
             mPresenter.waitForNextTest(mIteration, mTestType.getMaxAttempts());
         } else {
-           buildSuccessResults();
+            buildSuccessResults();
         }
     }
 
@@ -101,7 +101,7 @@ public final class ReactionTest {
     private long calcAverageReaction() {
         if (mResultList.size() == 0) return 0;
         long avg = 0;
-        for (Long l: mResultList) avg+=l;
+        for (Long l : mResultList) avg += l;
         avg = avg / mResultList.size();
         return avg;
     }
@@ -109,9 +109,9 @@ public final class ReactionTest {
     //If there is middle element - it is median, else - average for 2 middle elements
     private long calcMedianReaction() {
         if (mResultList.size() == 0) return 0;
-        if (mResultList.size()%2 == 1) {
+        if (mResultList.size() % 2 == 1) {
             return mResultList.get(mResultList.size() / 2);
-        }else {
+        } else {
             long m1 = mResultList.get(mResultList.size() / 2);
             long m2 = mResultList.get(mResultList.size() / 2 - 1);
             return (m1 + m2) / 2;
@@ -124,7 +124,9 @@ public final class ReactionTest {
 
     public interface UiPresenter {
         void waitingForTap();
+
         void testFinished(TestResult result);
+
         void waitForNextTest(int Iteration, int maxAttempts);
     }
 

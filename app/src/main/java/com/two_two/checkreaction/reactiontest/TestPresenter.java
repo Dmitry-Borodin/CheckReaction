@@ -3,10 +3,10 @@ package com.two_two.checkreaction.reactiontest;
 import android.content.Context;
 import android.util.Log;
 
-import com.two_two.checkreaction.utils.ColorGenerator;
 import com.two_two.checkreaction.models.game.ReactionTest;
 import com.two_two.checkreaction.models.game.TestResult;
 import com.two_two.checkreaction.models.game.TestType;
+import com.two_two.checkreaction.utils.ColorGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,7 +35,8 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
         return instance;
     }
 
-    private TestPresenter() {}
+    private TestPresenter() {
+    }
 
     //*******************************************************
     // Section: TestContract.Presenter
@@ -75,14 +76,14 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     @Override
     public void waitingForTap() {
         int color = mColorGenerator.getNextColor();
-        for (TestContract.View activity: mActivitySet) {
+        for (TestContract.View activity : mActivitySet) {
             activity.setReadyToTouch(color);
         }
     }
 
     @Override
     public void testFinished(TestResult result) {
-        for (TestContract.View activity: mActivitySet) {
+        for (TestContract.View activity : mActivitySet) {
             activity.showResult(result);
         }
         mReactionTest = null;
@@ -90,7 +91,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
 
     @Override
     public void waitForNextTest(int iteration, int maxAttempts) {
-        for (TestContract.View activity: mActivitySet) {
+        for (TestContract.View activity : mActivitySet) {
             activity.setWait(iteration, maxAttempts);
         }
     }

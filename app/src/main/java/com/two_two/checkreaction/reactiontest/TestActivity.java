@@ -35,8 +35,9 @@ public class TestActivity extends Activity implements TestContract.View {
             assert (testType != null);
             mPresenter.registerActivity(this);
             mPresenter.initialize(testType, getApplicationContext());
-        }else {
-            mLayout.setBackgroundColor(savedInstanceState.getInt(BACKGROUND, getResources().getColor(R.color.default_background)));
+        } else {
+            mLayout.setBackgroundColor(savedInstanceState.getInt(BACKGROUND, getResources()
+                    .getColor(R.color.default_background)));
         }
     }
 
@@ -57,7 +58,7 @@ public class TestActivity extends Activity implements TestContract.View {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             mPresenter.viewTouched();
             return true;
-        }else {
+        } else {
             return false;
         }
     }

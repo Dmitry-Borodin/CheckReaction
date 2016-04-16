@@ -1,7 +1,6 @@
 package com.two_two.checkreaction.startscreen;
 
 import com.two_two.checkreaction.models.App;
-import com.two_two.checkreaction.models.LocalData;
 import com.two_two.checkreaction.models.game.TestType;
 
 import java.util.ArrayList;
@@ -27,7 +26,8 @@ public class StartScreenPresenter {
         return instance;
     }
 
-    private StartScreenPresenter() {}
+    private StartScreenPresenter() {
+    }
 
     // Section: Methods for view
 
@@ -39,21 +39,22 @@ public class StartScreenPresenter {
         mCurrentActivity.remove(activity);
     }
 
-    public void startSimpleTest(){
+    public void startSimpleTest() {
         notifyStartTest(TestType.SIMPLE_TEST);
     }
 
-    public void startComplexTest(){
+    public void startComplexTest() {
         notifyStartTest(TestType.COMPLEX_TEST);
     }
 
     /**
      * If username is valid, this will be used in global score results in the cloud.
      * If not valid, nothing happens, previous or default name will remain.
+     *
      * @param username name to save
      */
     public void saveUsername(String username) {
-        if (isUsernameCurrect(username))   App.getInstance().getLocalData().setUsername(username);
+        if (isUsernameCurrect(username)) App.getInstance().getLocalData().setUsername(username);
     }
 
     private boolean isUsernameCurrect(String username) {
@@ -62,7 +63,7 @@ public class StartScreenPresenter {
     }
 
     private void notifyStartTest(TestType testType) {
-        for (StartActivityContract activity:mCurrentActivity) {
+        for (StartActivityContract activity : mCurrentActivity) {
             activity.startTest(testType);
         }
     }

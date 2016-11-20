@@ -7,24 +7,24 @@ import java.util.List;
 
 /**
  * Model for reaction test itself.
+ * <p>
+ * Call {@link #startTest(ReactionTestCallback)} to start test,
+ * And {@link #onTap()} when user provides reaction.
  */
 public final class ReactionTest {
 
     private static final String TAG = "ReactionTest";
     private final TestType mTestType;
-    private boolean mIsRunning;
-    private boolean mIsReadyForNextTap;
+    private boolean mIsRunning = false;
+    private boolean mIsReadyForNextTap = false;
     private final DelayTimer mDelayTimer = new DelayTimer();
     private ReactionTestCallback mTestCallback;
-    private long mCurrentTime;
+    private long mStartIterationTime;
     private int mIteration;
     private List<Long> mResultList = new ArrayList<>();
 
     public ReactionTest(TestType testType) {
         this.mTestType = testType;
-        mIteration = 1;
-        mIsRunning = false;
-        mIsReadyForNextTap = false;
     }
 
     public TestType getTestType() {
@@ -35,12 +35,15 @@ public final class ReactionTest {
         if (mIsRunning) {
             throw new RuntimeException("startTest called, but already run");
         }
+        mIteration = 1;
         mTestCallback = testCallback;
         mIsRunning = true;
         startTestIteration();
-        mTestCallback.waitForNextTest(mIteration, mTestType.getMaxAttempts());
     }
 
+    /**
+     * Should be called when user actually interact with test.
+     */
     public void onTap() {
         if (!mIsRunning) {
             Log.e(TAG, "onTap called, but test did not run");
@@ -55,23 +58,25 @@ public final class ReactionTest {
     }
 
     private void onIterationSucceed() {
-        long reaction = System.currentTimeMillis() - mCurrentTime;
+        long reaction = System.currentTimeMillis() - mStartIterationTime;
         mResultList.add(reaction);
         mIteration++;
         if (mIteration <= mTestType.getMaxAttempts()) {
             startTestIteration();
-            mTestCallback.waitForNextTest(mIteration, mTestType.getMaxAttempts());
         } else {
             proceedSuccessResults();
         }
     }
 
     private void startTestIteration() {
-        mDelayTimer.runDelayed(() -> {
-            mCurrentTime = System.currentTimeMillis();
-            mTestCallback.onReadyForNextTap();
-            mIsReadyForNextTap = true;
-        });
+        mTestCallback.onWaitForNextTest(mIteration, mTestType.getMaxAttempts());
+        mDelayTimer.runDelayed(this::startWaitingForReaction);
+    }
+
+    private void startWaitingForReaction() {
+        mStartIterationTime = System.currentTimeMillis();
+        mTestCallback.onReadyForNextTap();
+        mIsReadyForNextTap = true;
     }
 
     private void proceedFailResults() {
@@ -89,6 +94,7 @@ public final class ReactionTest {
         mTestCallback.onTestFinished(new TestResult(avg, median, isFailed, mTestType));
     }
 
+    @SuppressWarnings("UnnecessaryLocalVariable")
     private long calcAverageReaction() {
         if (mResultList.size() == 0) return 0;
         long resultSumm = 0;
@@ -97,15 +103,18 @@ public final class ReactionTest {
         return avg;
     }
 
-    //If there is middle element - it is median, else - average for 2 middle elements
+    @SuppressWarnings("UnnecessaryLocalVariable")
     private long calcMedianReaction() {
         if (mResultList.size() == 0) return 0;
+        //If there is middle element - it is median, else - average for 2 middle elements
         if (mResultList.size() % 2 == 1) {
-            return mResultList.get(mResultList.size() / 2);
+            long median = mResultList.get(mResultList.size() / 2);
+            return median;
         } else {
             long m1 = mResultList.get(mResultList.size() / 2);
             long m2 = mResultList.get(mResultList.size() / 2 - 1);
-            return (m1 + m2) / 2;
+            long averageForTwoMedians = (m1 + m2) / 2;
+            return averageForTwoMedians;
         }
     }
 
@@ -118,7 +127,7 @@ public final class ReactionTest {
 
         void onTestFinished(TestResult result);
 
-        void waitForNextTest(int currentAttampt, int maxAttempts);
+        void onWaitForNextTest(int currentAttampt, int maxAttempts);
     }
 
 }

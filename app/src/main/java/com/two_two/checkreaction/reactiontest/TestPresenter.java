@@ -90,7 +90,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.React
     }
 
     @Override
-    public void waitForNextTest(int currentAttampt, int maxAttempts) {
+    public void onWaitForNextTest(int currentAttampt, int maxAttempts) {
         for (TestContract.View activity : mActivitySet) {
             activity.setWait(currentAttampt, maxAttempts);
         }

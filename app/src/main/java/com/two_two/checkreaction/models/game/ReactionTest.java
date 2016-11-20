@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.model.game;
+package com.two_two.checkreaction.models.game;
 
 import android.util.Log;
 

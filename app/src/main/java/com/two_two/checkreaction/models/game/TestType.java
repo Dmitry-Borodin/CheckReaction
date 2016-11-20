@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.model.game;
+package com.two_two.checkreaction.models.game;
 
 /**
  * Created by Dmitry Borodin on 1/3/2016.

@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.model.firebase;
+package com.two_two.checkreaction.models.firebase;
 
 import android.os.Parcel;
 import android.os.Parcelable;

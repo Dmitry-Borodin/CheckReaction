@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.firebase.client.Query;
 import com.firebase.ui.FirebaseListAdapter;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.model.firebase.FireComplexResult;
+import com.two_two.checkreaction.models.firebase.FireComplexResult;
 
 /**
  * Adapter for score list by Firebase.

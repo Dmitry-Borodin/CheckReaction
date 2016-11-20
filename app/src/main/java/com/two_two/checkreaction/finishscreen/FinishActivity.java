@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
 import com.two_two.checkreaction.gamescore.GameScoreActivity;
-import com.two_two.checkreaction.model.App;
-import com.two_two.checkreaction.model.firebase.FireComplexResult;
-import com.two_two.checkreaction.model.firebase.FirebaseSender;
-import com.two_two.checkreaction.model.game.TestResult;
-import com.two_two.checkreaction.model.game.TestType;
+import com.two_two.checkreaction.models.App;
+import com.two_two.checkreaction.models.firebase.FireComplexResult;
+import com.two_two.checkreaction.models.firebase.FirebaseSender;
+import com.two_two.checkreaction.models.game.TestResult;
+import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.reactiontest.TestActivity;
 
 

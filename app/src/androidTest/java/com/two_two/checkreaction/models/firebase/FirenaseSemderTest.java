@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.model.firebase;
+package com.two_two.checkreaction.models.firebase;
 
 
 import org.junit.Test;

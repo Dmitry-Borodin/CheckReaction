@@ -8,7 +8,7 @@ import android.widget.ListView;
 import com.firebase.client.Firebase;
 import com.two_two.checkreaction.BuildConfig;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.model.firebase.FireComplexResult;
+import com.two_two.checkreaction.models.firebase.FireComplexResult;
 
 /**
  * Showing gamescores from Firebase backend.

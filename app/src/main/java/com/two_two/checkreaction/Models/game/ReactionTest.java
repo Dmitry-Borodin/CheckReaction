@@ -10,99 +10,90 @@ import java.util.List;
  */
 public final class ReactionTest {
 
-    //*******************************************************
-    // Section: values
-    //*******************************************************
-
     private static final String TAG = "ReactionTest";
     private final TestType mTestType;
-    private boolean mRunned = false;
-    private boolean mIsTapWaited = false;
-    private DelayTimer mDelayTimer = new DelayTimer();
-    private UiPresenter mPresenter;
+    private boolean mIsRunning;
+    private boolean mIsReadyForNextTap;
+    private final DelayTimer mDelayTimer = new DelayTimer();
+    private ReactionTestCallback mTestCallback;
     private long mCurrentTime;
-    private int mIteration = 1;
+    private int mIteration;
     private List<Long> mResultList = new ArrayList<>();
-
-    //*******************************************************
-    // Section: constructor-getters-setters
-    //*******************************************************
 
     public ReactionTest(TestType testType) {
         this.mTestType = testType;
+        mIteration = 1;
+        mIsRunning = false;
+        mIsReadyForNextTap = false;
     }
 
     public TestType getTestType() {
         return mTestType;
     }
 
-    //*******************************************************
-    // Section: public methods
-    //*******************************************************
-
-    public void startTest(UiPresenter presenter) {
-        if (mRunned) {
+    public void startTest(ReactionTestCallback testCallback) {
+        if (mIsRunning) {
             throw new RuntimeException("startTest called, but already run");
         }
-        mPresenter = presenter;
-        mRunned = true;
-        nextTest();
-        mPresenter.waitForNextTest(mIteration, mTestType.getMaxAttempts());
+        mTestCallback = testCallback;
+        mIsRunning = true;
+        startTestIteration();
+        mTestCallback.waitForNextTest(mIteration, mTestType.getMaxAttempts());
     }
 
     public void onTap() {
-        if (!mRunned) {
+        if (!mIsRunning) {
             Log.e(TAG, "onTap called, but test did not run");
             return;
         }
-        if (mIsTapWaited) {
-            onTapWaited();
-            mIsTapWaited = false;
+        if (mIsReadyForNextTap) {
+            onIterationSucceed();
+            mIsReadyForNextTap = false;
         } else {
-            buildFailResults();
+            proceedFailResults();
         }
     }
 
-    private void onTapWaited() {
+    private void onIterationSucceed() {
         long reaction = System.currentTimeMillis() - mCurrentTime;
         mResultList.add(reaction);
         mIteration++;
         if (mIteration <= mTestType.getMaxAttempts()) {
-            nextTest();
-            mPresenter.waitForNextTest(mIteration, mTestType.getMaxAttempts());
+            startTestIteration();
+            mTestCallback.waitForNextTest(mIteration, mTestType.getMaxAttempts());
         } else {
-            buildSuccessResults();
+            proceedSuccessResults();
         }
     }
 
-    private void nextTest() {
+    private void startTestIteration() {
         mDelayTimer.runDelayed(() -> {
             mCurrentTime = System.currentTimeMillis();
-            mPresenter.waitingForTap();
-            mIsTapWaited = true;
+            mTestCallback.onReadyForNextTap();
+            mIsReadyForNextTap = true;
         });
     }
 
-    private void buildFailResults() {
-        mRunned = false;
+    private void proceedFailResults() {
+        mIsRunning = false;
         long noResult = 0; //test filed, no results
         boolean isFailed = true;
-        mPresenter.testFinished(new TestResult(noResult, noResult, isFailed, mTestType));
+        mTestCallback.onTestFinished(new TestResult(noResult, noResult, isFailed, mTestType));
     }
 
-    private void buildSuccessResults() {
-        mRunned = false;
+    private void proceedSuccessResults() {
+        mIsRunning = false;
         long avg = calcAverageReaction();
         long median = calcMedianReaction();
         boolean isFailed = false;
-        mPresenter.testFinished(new TestResult(avg, median, isFailed, mTestType));
+        mTestCallback.onTestFinished(new TestResult(avg, median, isFailed, mTestType));
     }
 
     private long calcAverageReaction() {
         if (mResultList.size() == 0) return 0;
-        long avg = 0;
-        for (Long l : mResultList) avg += l;
-        avg = avg / mResultList.size();
+        long resultSumm = 0;
+        for (Long result : mResultList) resultSumm += result;
+        long avg = resultSumm / mResultList.size();
         return avg;
     }
 
@@ -122,12 +113,12 @@ public final class ReactionTest {
     // Section: Helpers
     //*******************************************************
 
-    public interface UiPresenter {
-        void waitingForTap();
+    public interface ReactionTestCallback {
+        void onReadyForNextTap();
 
-        void testFinished(TestResult result);
+        void onTestFinished(TestResult result);
 
-        void waitForNextTest(int Iteration, int maxAttempts);
+        void waitForNextTest(int currentAttampt, int maxAttempts);
     }
 
 }

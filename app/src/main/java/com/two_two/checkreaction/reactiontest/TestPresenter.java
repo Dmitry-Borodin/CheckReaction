@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Created by Dmitry Borodin on 1/4/2016.
  */
-public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPresenter {
+public class TestPresenter implements TestContract.Presenter, ReactionTest.ReactionTestCallback {
 
     private static final String TAG = "TestPresenter";
     private static volatile TestPresenter sInstance;
@@ -69,12 +69,12 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     }
 
     //*******************************************************
-    // Section: ReactionTest.UiPresenter
+    // Section: ReactionTest.ReactionTestCallback
     //*******************************************************
 
 
     @Override
-    public void waitingForTap() {
+    public void onReadyForNextTap() {
         int color = mColorGenerator.getNextColor();
         for (TestContract.View activity : mActivitySet) {
             activity.setReadyToTouch(color);
@@ -82,7 +82,7 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     }
 
     @Override
-    public void testFinished(TestResult result) {
+    public void onTestFinished(TestResult result) {
         for (TestContract.View activity : mActivitySet) {
             activity.showResult(result);
         }
@@ -90,9 +90,9 @@ public class TestPresenter implements TestContract.Presenter, ReactionTest.UiPre
     }
 
     @Override
-    public void waitForNextTest(int iteration, int maxAttempts) {
+    public void waitForNextTest(int currentAttampt, int maxAttempts) {
         for (TestContract.View activity : mActivitySet) {
-            activity.setWait(iteration, maxAttempts);
+            activity.setWait(currentAttampt, maxAttempts);
         }
     }
 }

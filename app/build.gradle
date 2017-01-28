@@ -13,6 +13,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'kotlin-android-extensions'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -72,9 +73,10 @@ dependencies {
         transitive = true;
     }
     compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.android.support.constraint:constraint-layout:1.0.0-beta4"
     compile "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
-    compile "com.jakewharton:butterknife:$rootProject.butterknife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife"
+//    compile "com.jakewharton:butterknife:$rootProject.butterknife"
+//    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife"
 
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 

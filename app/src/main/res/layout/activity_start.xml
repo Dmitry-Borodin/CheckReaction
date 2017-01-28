@@ -1,10 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ui.startscreen.StartActivity"
-    android:id="@+id/StActivity"
+    android:id="@+id/stActivity"
     android:background="@color/ac_background"
     android:gravity="center"
     android:orientation="vertical">
@@ -18,30 +19,38 @@
         android:gravity="center"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/st_activity_button_width"
+        android:layout_height="@dimen/st_activity_button_height"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/Tutor"
         android:id="@+id/ac_start_text_tutorial"
-        android:layout_marginTop="@dimen/margin_big"
+        android:layout_marginTop="@dimen/margin_mid_low"
         android:textStyle="normal"
         android:gravity="center"/>
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/st_activity_button_width"
+        android:layout_height="@dimen/st_activity_button_height"
         android:text="@string/simple_test_button"
         android:id="@+id/ac_start_simple_button"
         android:onClick="onClickSimpleTest"
-        android:layout_marginTop="@dimen/margin_medium"/>
+        android:layout_marginTop="@dimen/margin_mid_low"/>
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/st_activity_button_width"
+        android:layout_height="@dimen/st_activity_button_height"
         android:text="@string/complex_test_button"
         android:id="@+id/ac_start_complex_button"
         android:onClick="onClickComplexTest"
-        android:layout_marginTop="@dimen/margin_medium"/>
+        android:layout_marginTop="@dimen/margin_mid_low"/>
+
+    <Button
+        android:layout_width="@dimen/st_activity_button_width"
+        android:layout_height="@dimen/st_activity_button_height"
+        android:text="@string/science_test"
+        android:id="@+id/ac_start_science_button"
+        android:onClick="onClickScienceTest"
+        android:layout_marginTop="@dimen/margin_mid_low"/>
 
     <TextView
         android:layout_width="wrap_content"

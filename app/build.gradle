@@ -65,13 +65,16 @@ android {
 
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "com.firebase:firebase-client-android:$rootProject.ext.firebaseVersion"
     compile "com.firebaseui:firebase-ui:$rootProject.ext.fibaseUiVersion"
     compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion") {
         transitive = true;
     }
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
+    compile "com.jakewharton:butterknife:$rootProject.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife"
 
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 

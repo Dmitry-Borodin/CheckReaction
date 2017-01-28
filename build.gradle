@@ -29,4 +29,6 @@ ext {
     runnerVersion = '0.4.1'
     rulesVersion = '0.4.1'
     espressoVersion = '2.2.1'
+    butterknife = "8.4.0"
+    materialDialogs = '0.9.2.3'
 }

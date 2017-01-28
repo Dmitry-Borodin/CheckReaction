@@ -12,7 +12,7 @@
     <string name="complex_reaction_is">"Средняя реакция "</string>
     <string name="ErrorInTestTypeSwitch">Ошибка в currentTestType switch. Обратитесь к разработчику.</string>
     <string name="simple_test_button">Быстрый тест</string>
-    <string name="complex_test_button">Комплексный тест с рейтингом</string>
+    <string name="complex_test_button">Комплексный тест</string>
     <string name="testing_command_tap">ЖМИ!</string>
     <string name="testing_string_ready">Приготовься!</string>
     <string name="Iteration">"Попытка "</string>

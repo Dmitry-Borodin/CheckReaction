@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.domain;
+package com.two_two.checkreaction.models;
 
 import android.content.Context;
 import android.content.SharedPreferences;

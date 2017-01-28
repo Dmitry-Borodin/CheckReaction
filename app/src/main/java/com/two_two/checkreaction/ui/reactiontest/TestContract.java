@@ -2,8 +2,8 @@ package com.two_two.checkreaction.ui.reactiontest;
 
 import android.content.Context;
 
-import com.two_two.checkreaction.domain.game.TestResult;
-import com.two_two.checkreaction.domain.game.TestType;
+import com.two_two.checkreaction.models.game.TestResult;
+import com.two_two.checkreaction.models.game.TestType;
 
 /**
  * Created by Dmitry Borodin on 1/3/2016.

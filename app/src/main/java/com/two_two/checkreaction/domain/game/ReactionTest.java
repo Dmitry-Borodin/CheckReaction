@@ -2,6 +2,9 @@ package com.two_two.checkreaction.domain.game;
 
 import android.util.Log;
 
+import com.two_two.checkreaction.models.game.TestResult;
+import com.two_two.checkreaction.models.game.TestType;
+
 import java.util.ArrayList;
 import java.util.List;
 

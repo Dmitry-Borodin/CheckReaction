@@ -4,8 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.two_two.checkreaction.domain.game.ReactionTest;
-import com.two_two.checkreaction.domain.game.TestResult;
-import com.two_two.checkreaction.domain.game.TestType;
+import com.two_two.checkreaction.models.game.TestResult;
+import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.utils.ColorGenerator;
 
 import java.util.HashSet;

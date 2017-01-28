@@ -3,13 +3,12 @@ package com.two_two.checkreaction.ui.startscreen;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.domain.App;
-import com.two_two.checkreaction.domain.game.TestType;
+import com.two_two.checkreaction.models.App;
+import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.ui.reactiontest.TestActivity;
 import com.two_two.checkreaction.ui.scienceproject.ScienceActivitySplash;
 

@@ -8,27 +8,27 @@ import android.widget.TextView;
 import com.firebase.client.Query;
 import com.firebase.ui.FirebaseListAdapter;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.domain.firebase.FireComplexResult;
+import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 
 /**
  * Adapter for score list by Firebase.
  */
-public class ScoresListAdapter extends FirebaseListAdapter<FireComplexResult> {
+public class ScoresListAdapter extends FirebaseListAdapter<FirebaseComplexResult> {
 
-    private FireComplexResult mCurrentResult;
+    private FirebaseComplexResult mCurrentResult;
     private OnLoadListener mOnLoadListener;
     private boolean mWasLoaded = false;
 
     public ScoresListAdapter(Activity activity, Query ref,
-                             FireComplexResult currentResult,
+                             FirebaseComplexResult currentResult,
                              OnLoadListener onLoadListener) {
-        super(activity, FireComplexResult.class, R.layout.item_score_result, ref);
+        super(activity, FirebaseComplexResult.class, R.layout.item_score_result, ref);
         this.mCurrentResult = currentResult;
         this.mOnLoadListener = onLoadListener;
     }
 
     @Override
-    protected void populateView(View v, FireComplexResult model, int position) {
+    protected void populateView(View v, FirebaseComplexResult model, int position) {
 
         TextView number = (TextView) v.findViewById(R.id.item_score_number);
         TextView username = (TextView) v.findViewById(R.id.item_score_username);

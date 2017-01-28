@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.domain.firebase;
+package com.two_two.checkreaction.models.game;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,10 +6,10 @@ import android.os.Parcelable;
 /**
  * POJO for storing results of complex test in firebase
  */
-public class FireComplexResult implements Parcelable {
+public class FirebaseComplexResult implements Parcelable {
 
     public static final String MEDIAN = "median";
-    public static final String TAG = "FireComplexResult";
+    public static final String TAG = "FirebaseComplexResult";
 
     //breaking AOSP naming policy for more nice getters names since Firebase have strict
     // requirements about that.
@@ -19,7 +19,7 @@ public class FireComplexResult implements Parcelable {
     //doesn't participate in equials because it will fill up only in firebase cloud.
     private long timestamp;
 
-    public FireComplexResult(long average, long median, String username) {
+    public FirebaseComplexResult(long average, long median, String username) {
         this.average = average;
         this.median = median;
         this.username = username;
@@ -29,7 +29,7 @@ public class FireComplexResult implements Parcelable {
     * This constructor for Firebase use. There is no reason to use it manually.
      */
     @Deprecated
-    public FireComplexResult() {
+    public FirebaseComplexResult() {
     }
 
     //*******************************************************
@@ -57,7 +57,7 @@ public class FireComplexResult implements Parcelable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FireComplexResult that = (FireComplexResult) o;
+        FirebaseComplexResult that = (FirebaseComplexResult) o;
 
         if (average != that.average) return false;
         if (median != that.median) return false;
@@ -90,20 +90,20 @@ public class FireComplexResult implements Parcelable {
         dest.writeLong(this.timestamp);
     }
 
-    protected FireComplexResult(Parcel in) {
+    protected FirebaseComplexResult(Parcel in) {
         this.average = in.readLong();
         this.median = in.readLong();
         this.username = in.readString();
         this.timestamp = in.readLong();
     }
 
-    public static final Creator<FireComplexResult> CREATOR = new Creator<FireComplexResult>() {
-        public FireComplexResult createFromParcel(Parcel source) {
-            return new FireComplexResult(source);
+    public static final Creator<FirebaseComplexResult> CREATOR = new Creator<FirebaseComplexResult>() {
+        public FirebaseComplexResult createFromParcel(Parcel source) {
+            return new FirebaseComplexResult(source);
         }
 
-        public FireComplexResult[] newArray(int size) {
-            return new FireComplexResult[size];
+        public FirebaseComplexResult[] newArray(int size) {
+            return new FirebaseComplexResult[size];
         }
     };
 }

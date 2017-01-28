@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.two_two.checkreaction" >
-    <!--for crashLytics and firebase-->
+    package="com.two_two.checkreaction">
+
+    <!-- for crashLytics and firebase -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".models.App"
+        android:name=".domain.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Halo" >
-        <activity
-            android:name=".startscreen.StartActivity">
+        android:theme="@style/Halo">
+        <activity android:name=".ui.startscreen.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".reactiontest.TestActivity"
-            android:parentActivityName=".startscreen.StartActivity" >
-                <meta-data
+            android:name=".ui.reactiontest.TestActivity"
+            android:parentActivityName=".ui.startscreen.StartActivity">
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".startscreen.StartActivity" />
+                android:value=".ui.startscreen.StartActivity" />
         </activity>
         <activity
-            android:name=".finishscreen.FinishActivity"
-            android:parentActivityName=".startscreen.StartActivity"
-            android:launchMode="singleTask" >
-        </activity>
+            android:name=".ui.finishscreen.FinishActivity"
+            android:launchMode="singleTask"
+            android:parentActivityName=".ui.startscreen.StartActivity"></activity>
         <activity
-            android:name=".gamescore.GameScoreActivity"
-            android:parentActivityName=".startscreen.StartActivity" >
-        </activity>
+            android:name=".ui.gamescore.GameScoreActivity"
+            android:parentActivityName=".ui.startscreen.StartActivity"></activity>
 
-        <!-- put your value here-->
+        <!-- put your value here -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="b6c8885fa885272bfabda2768aa069255689742b" />
 
+        <activity android:name=".ui.scienceproject.ScienceActivitySplash"></activity>
     </application>
+
 </manifest>

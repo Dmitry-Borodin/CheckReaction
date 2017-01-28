@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.models.game;
+package com.two_two.checkreaction.domain.game;
 
 import android.os.Parcel;
 import android.os.Parcelable;

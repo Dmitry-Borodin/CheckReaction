@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.models.firebase;
+package com.two_two.checkreaction.domain.firebase;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.ServerValue;

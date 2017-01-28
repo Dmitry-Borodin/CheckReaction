@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.gamescore;
+package com.two_two.checkreaction.ui.gamescore;
 
 /**
  * Indicates, that some results loaded

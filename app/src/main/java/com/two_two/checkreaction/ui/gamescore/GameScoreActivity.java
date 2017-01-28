@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.gamescore;
+package com.two_two.checkreaction.ui.gamescore;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -8,7 +8,7 @@ import android.widget.ListView;
 import com.firebase.client.Firebase;
 import com.two_two.checkreaction.BuildConfig;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.models.firebase.FireComplexResult;
+import com.two_two.checkreaction.domain.firebase.FireComplexResult;
 
 /**
  * Showing gamescores from Firebase backend.

@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.gamescore;
+package com.two_two.checkreaction.ui.gamescore;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.firebase.client.Query;
 import com.firebase.ui.FirebaseListAdapter;
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.models.firebase.FireComplexResult;
+import com.two_two.checkreaction.domain.firebase.FireComplexResult;
 
 /**
  * Adapter for score list by Firebase.

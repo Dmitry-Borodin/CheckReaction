@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.reactiontest;
+package com.two_two.checkreaction.ui.reactiontest;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.finishscreen.FinishActivity;
-import com.two_two.checkreaction.models.game.TestResult;
-import com.two_two.checkreaction.models.game.TestType;
+import com.two_two.checkreaction.ui.finishscreen.FinishActivity;
+import com.two_two.checkreaction.domain.game.TestResult;
+import com.two_two.checkreaction.domain.game.TestType;
 
 public class TestActivity extends Activity implements TestContract.View {
 

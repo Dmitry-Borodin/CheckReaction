@@ -1,7 +1,7 @@
-package com.two_two.checkreaction.startscreen;
+package com.two_two.checkreaction.ui.startscreen;
 
-import com.two_two.checkreaction.models.App;
-import com.two_two.checkreaction.models.game.TestType;
+import com.two_two.checkreaction.domain.App;
+import com.two_two.checkreaction.domain.game.TestType;
 
 import java.util.ArrayList;
 

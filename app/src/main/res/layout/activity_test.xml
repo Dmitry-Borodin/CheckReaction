@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="@color/default_background"
-    tools:context=".reactiontest.TestActivity"
+    tools:context=".ui.reactiontest.TestActivity"
     android:id="@+id/ac_test_main_layout">
 
     <TextView

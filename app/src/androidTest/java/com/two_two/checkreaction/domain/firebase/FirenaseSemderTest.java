@@ -1,11 +1,11 @@
-package com.two_two.checkreaction.models.firebase;
+package com.two_two.checkreaction.domain.firebase;
 
 
 import org.junit.Test;
 
 public class FirenaseSemderTest {
 
-    @Test()
+    @Test
     public void send_standsrt_result_to_firebase() {
         FireComplexResult result = new FireComplexResult(1000,1000,"test");
         FirebaseSender.getInstance().updateResult(result);

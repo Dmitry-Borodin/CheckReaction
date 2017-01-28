@@ -9,15 +9,16 @@ import java.util.Random;
  * Manually configured delay timer.
  * Runs provided code after random delay with preconfigured settings.
  */
-public final class DelayTimer {
+public final class RandomDelayTimer implements DelayTimer {
 
     private static final int MIN_DELAY = 500;
     private static final int RANDOM_DELAY1 = 5000;
     private static final int RANDOM_DELAY2 = 1000;
     private final Random mRandom = new Random();
 
-    public void runDelayed(final Delayed delayed) {
-        new Handler().postDelayed(delayed::delayedCode, getRandomTime());
+    @Override
+    public void runDelayed(final DelayTimerCallback delayTimerCallback) {
+        new Handler().postDelayed(delayTimerCallback::delayedCode, getRandomTime());
     }
 
     private int getRandomTime() {
@@ -25,7 +26,4 @@ public final class DelayTimer {
         return mRandom.nextInt(RANDOM_DELAY1) + mRandom.nextInt(RANDOM_DELAY2) + MIN_DELAY;
     }
 
-    public interface Delayed {
-        void delayedCode();
-    }
 }

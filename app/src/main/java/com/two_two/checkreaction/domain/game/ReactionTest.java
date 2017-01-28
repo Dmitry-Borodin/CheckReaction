@@ -20,7 +20,7 @@ public final class ReactionTest {
     private final TestType mTestType;
     private boolean mIsRunning = false;
     private boolean mIsReadyForNextTap = false;
-    private final DelayTimer mDelayTimer = new DelayTimer();
+    private final RandomDelayTimer mRandomDelayTimer = new RandomDelayTimer();
     private ReactionTestCallback mTestCallback;
     private long mStartIterationTime;
     private int mIteration;
@@ -73,7 +73,7 @@ public final class ReactionTest {
 
     private void startTestIteration() {
         mTestCallback.onWaitForNextTest(mIteration, mTestType.getMaxAttempts());
-        mDelayTimer.runDelayed(this::startWaitingForReaction);
+        mRandomDelayTimer.runDelayed(this::startWaitingForReaction);
     }
 
     private void startWaitingForReaction() {

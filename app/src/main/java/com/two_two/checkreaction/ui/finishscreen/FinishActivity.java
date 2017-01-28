@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.ui.gamescore.GameScoreActivity;
+import com.two_two.checkreaction.ui.gamescore.ComplexScoreActivity;
 import com.two_two.checkreaction.models.App;
 import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 import com.two_two.checkreaction.domain.firebase.FirebaseSender;
@@ -85,7 +85,7 @@ public class FinishActivity extends Activity {
 
     //  defined in XML
     public void toRaiting(View view) {
-        Intent intent = new Intent(this, GameScoreActivity.class);
+        Intent intent = new Intent(this, ComplexScoreActivity.class);
         intent.putExtra(FirebaseComplexResult.TAG, mFireResult);
         startActivity(intent);
         finish();

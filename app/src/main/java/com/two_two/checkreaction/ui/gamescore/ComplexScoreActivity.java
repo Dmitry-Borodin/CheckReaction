@@ -11,13 +11,13 @@ import com.two_two.checkreaction.R;
 import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 
 /**
- * Showing gamescores from Firebase backend.
+ * Showing gamescores for Complex Test from Firebase backend.
  * Created by Dmitry Borodin on 2/1/2016.
  */
-public class GameScoreActivity extends Activity {
+public class ComplexScoreActivity extends Activity {
 
     private ListView mList;
-    private ScoresListAdapter mAdapter;
+    private ComplexScoresListAdapter mAdapter;
     private Firebase mFirebasecores;
 
     @Override
@@ -34,7 +34,7 @@ public class GameScoreActivity extends Activity {
         FirebaseComplexResult currentResult = getIntent().getParcelableExtra(FirebaseComplexResult.TAG);
         mFirebasecores = new Firebase(BuildConfig.FIREBASE_ROOT)
                 .child(BuildConfig.FIREBASE_GAMESCORES);
-        mAdapter = new ScoresListAdapter(this, mFirebasecores.orderByChild(FirebaseComplexResult.MEDIAN),
+        mAdapter = new ComplexScoresListAdapter(this, mFirebasecores.orderByChild(FirebaseComplexResult.MEDIAN),
                 currentResult, dialog::dismiss);
         mList.setAdapter(mAdapter);
     }

@@ -20,14 +20,14 @@
             android:orientation="horizontal"
             android:layout_weight="1">
             <View
-                android:id="@+id/science_plate1"
+                android:id="@+id/science_tile1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 tools:background="@color/ac_background" />
 
             <View
-                android:id="@+id/science_plate2"
+                android:id="@+id/science_tile2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -41,13 +41,13 @@
             android:layout_weight="1">
 
             <View
-                android:id="@+id/science_plate3"
+                android:id="@+id/science_tile3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:background="@color/blue" />
             <View
-                android:id="@+id/science_plate4"
+                android:id="@+id/science_tile4"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -56,6 +56,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/header_advice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"

@@ -2,6 +2,9 @@
     <color name="black_overlay">#66000000</color>
     <color name="blue">#6300ff</color>
     <color name="greed">#4CAF50</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#F44336</color>
     <color name="test1">#6300ff</color>
     <color name="test2">#FF9800</color>
     <color name="test3">#9E9E9E</color>

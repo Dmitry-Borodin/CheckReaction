@@ -6,13 +6,11 @@ buildscript {
 
     dependencies {
         classpath 'io.fabric.tools:gradle:1.+'
-        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
     }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
-apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'kotlin-android-extensions'
 
 repositories {
@@ -48,11 +46,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-//    for retrolambda
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
     //for Firebase
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -75,8 +68,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
     compile "com.android.support.constraint:constraint-layout:1.0.0-beta4"
     compile "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
-//    compile "com.jakewharton:butterknife:$rootProject.butterknife"
-//    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknife"
 
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 

@@ -3,7 +3,6 @@ package com.two_two.checkreaction.ui.scienceproject
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.models.science.ScienceTestResult
 import com.two_two.checkreaction.ui.finishscreen.FinishActivity

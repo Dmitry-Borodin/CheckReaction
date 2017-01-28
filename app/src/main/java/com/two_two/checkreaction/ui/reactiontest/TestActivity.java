@@ -45,7 +45,12 @@ public class TestActivity extends Activity implements TestContract.View {
     protected void onStart() {
         super.onStart();
         mPresenter.registerActivity(this);
-        mLayout.setOnTouchListener(this::onTouch);
+        mLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouched(event);
+            }
+        });
     }
 
     @Override
@@ -54,7 +59,7 @@ public class TestActivity extends Activity implements TestContract.View {
         mPresenter.unregisterActivity(this);
     }
 
-    private boolean onTouch(View v, MotionEvent event) {
+    private boolean onTouched(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             mPresenter.viewTouched();
             return true;

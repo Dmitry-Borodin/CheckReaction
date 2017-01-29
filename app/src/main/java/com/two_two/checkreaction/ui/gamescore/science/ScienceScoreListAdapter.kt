@@ -30,7 +30,7 @@ class ScienceScoreListAdapter(
         val average = v.findViewById(R.id.item_score_average) as TextView
         val median = v.findViewById(R.id.item_score_median) as TextView
 
-        if (model == currentResult) v.setBackgroundColor(Color.RED)
+        if (model.equals(currentResult)) v.setBackgroundColor(Color.RED)
         if (!mWasLoaded) {
             mWasLoaded = true
             onLoadListener.onLoaded()

@@ -18,4 +18,14 @@ data class FirebaseScienceResult(
         val HITS = "currectHits"
         val TIMESTAMP = "timestamp"
     }
+
+
+    override fun equals(other: Any?): Boolean {
+        if (other !is FirebaseScienceResult) {
+            return false
+        }
+        if (other.currectHits != currectHits) return false
+        if (other.average != average) return false
+        return other.username == username
+    }
 }

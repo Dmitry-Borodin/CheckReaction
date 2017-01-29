@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.domain.game
 
 import android.util.Log
+import com.two_two.checkreaction.domain.science.ResultsGenerator
 
 import com.two_two.checkreaction.models.game.TestResult
 import com.two_two.checkreaction.models.game.TestType
@@ -79,32 +80,10 @@ class ReactionTest(val testType: TestType) {
 
     private fun proceedSuccessResults() {
         mIsRunning = false
-        val avg = calcAverageReaction()
-        val median = calcMedianReaction()
+        val avg = ResultsGenerator.calcAverageReaction(mResultList)
+        val median = ResultsGenerator.calcMedianReaction(mResultList)
         val isFailed = false
         mTestCallback?.onTestFinished(TestResult(avg, median, isFailed, testType))
-    }
-
-    private fun calcAverageReaction(): Long {
-        if (mResultList.size == 0) return 0
-        var resultSumm: Long = 0
-        for (result in mResultList) resultSumm += result
-        val avg = resultSumm / mResultList.size
-        return avg
-    }
-
-    private fun calcMedianReaction(): Long {
-        if (mResultList.size == 0) return 0
-        //If there is middle element - it is median, else - average for 2 middle elements
-        if (mResultList.size % 2 == 1) {
-            val median = mResultList[mResultList.size / 2]
-            return median
-        } else {
-            val m1 = mResultList[mResultList.size / 2]
-            val m2 = mResultList[mResultList.size / 2 - 1]
-            val averageForTwoMedians = (m1 + m2) / 2
-            return averageForTwoMedians
-        }
     }
 
     //*******************************************************

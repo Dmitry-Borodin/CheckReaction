@@ -16,6 +16,10 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_science_test)
+        science_tile1.setOnClickListener { presenter.onFirstViewClicked() }
+        science_tile2.setOnClickListener { presenter.onSecondViewClicked() }
+        science_tile3.setOnClickListener { presenter.onThirdViewClicked() }
+        science_tile4.setOnClickListener { presenter.onForthViewClicked() }
     }
 
     override fun onStart() {
@@ -29,22 +33,24 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
     }
 
     override fun setFirstViewColor(color: Int) {
+        science_tile1.setBackgroundColor(color)
     }
 
     override fun setSecondViewColor(color: Int) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        science_tile2.setBackgroundColor(color)
     }
 
     override fun setThirdViewColor(color: Int) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        science_tile3.setBackgroundColor(color)
     }
 
     override fun setForthViewColor(color: Int) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        science_tile4.setBackgroundColor(color)
     }
 
     override fun setRightColor(color: Int, colorName: String) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        header_advice.setTextColor(color)
+        header_advice.text = getString(R.string.science_test_header1) + colorName + getString(R.string.science_test_header2)
     }
 
     override fun navigateToResults(result: ScienceTestResult) {

@@ -34,7 +34,9 @@
             android:name=".ui.gamescore.ComplexScoreActivity"
             android:parentActivityName=".ui.startscreen.StartActivity" />
         <activity android:name=".ui.scienceproject.ScienceActivitySplash" />
-        <activity android:name=".ui.scienceproject.ScienceTestActivity" />
+        <activity android:name=".ui.scienceproject.ScienceTestActivity"
+            android:configChanges="orientation|keyboardHidden"
+            />
         <!-- put your value here -->
         <meta-data
             android:name="io.fabric.ApiKey"

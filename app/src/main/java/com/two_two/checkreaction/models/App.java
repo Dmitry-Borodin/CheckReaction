@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.models;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import com.crashlytics.android.Crashlytics;
 import com.firebase.client.Firebase;
@@ -24,6 +25,7 @@ public class App extends Application {
         mLocalData = new LocalData(this.getApplicationContext());
     }
 
+    @NonNull
     public static App getInstance() {
         return sInstance;
     }

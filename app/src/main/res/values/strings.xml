@@ -32,4 +32,11 @@
     <string name="science_splash_posttext">Tap on the asked color area as soon as you see it, as quickly as you can. Each screen will only last 1 second and you will have 10 screens to play on.</string>
     <string name="science_splash_next_button">Begin the test</string>
     <string name="science_test">Science test</string>
+    <string name="colour_white">white</string>
+    <string name="colour_yellow">yellow</string>
+    <string name="colour_red">red</string>
+    <string name="colour_blue">blue</string>
+    <string name="colour_black">black</string>
+    <string name="science_test_header1">Tap the</string>
+    <string name="science_test_header2">tile</string>
 </resources>

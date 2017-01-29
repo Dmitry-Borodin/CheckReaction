@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.ui.scienceproject
 
 import android.content.Context
+import com.two_two.checkreaction.di.DependencyProvider
 import com.two_two.checkreaction.models.App
 
 /**
@@ -9,6 +10,8 @@ import com.two_two.checkreaction.models.App
 class ScienceTestPresenter(val appContext: Context? = App.getInstance()) : ScienceTestContract.Presenter {
 
     var view: ScienceTestContract.View? = null
+    val scienceTest = DependencyProvider.getScienceTest()
+
 
     override fun bindActivity(view: ScienceTestContract.View) {
         this.view = view

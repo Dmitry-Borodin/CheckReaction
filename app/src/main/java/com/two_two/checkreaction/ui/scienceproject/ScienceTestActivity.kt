@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.models.science.ScienceTestResult
-import com.two_two.checkreaction.ui.finishscreen.FinishActivity
+import com.two_two.checkreaction.ui.finishscreen.ScienceFinishActivity
 import kotlinx.android.synthetic.main.activity_science_test.*
 import java.io.Serializable
 
@@ -54,7 +54,7 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
     }
 
     override fun navigateToResults(result: ScienceTestResult) {
-        val intent = Intent(this, FinishActivity::class.java)
+        val intent = Intent(this, ScienceFinishActivity::class.java)
         intent.putExtra(ScienceTestResult.TAG, result as Serializable)
         startActivity(intent)
         finish()

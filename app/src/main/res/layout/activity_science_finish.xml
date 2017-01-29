@@ -1,41 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_science_finish"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".ui.finishscreen.FinishActivity"
-    android:onClick="againMethod"
+    tools:context="com.two_two.checkreaction.ui.finishscreen.ScienceFinishActivity"
     android:background="@color/ac_background"
     android:orientation="vertical"
     android:gravity="center">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:text="result text"
-        android:id="@+id/ac_finish_result_text"
-        android:gravity="center" />
+        android:id="@+id/result_text"
+        android:text="Your score:"
+        android:gravity="start|center_vertical" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/TryAgain"
-        android:id="@+id/ac_finish_try_again_text"
-        android:layout_marginTop="@dimen/margin_medium"/>
+        tools:text="accuracy result text"
+        android:id="@+id/accuracy_result_text"
+        android:gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="average result text"
+        android:id="@+id/average_result_text"
+        android:gravity="center_horizontal|top"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ac_finish_rating_button"
+        android:id="@+id/rating_button"
         android:layout_marginTop="@dimen/margin_mid_low"
         android:padding="@dimen/button_padding"
         android:text="@string/open_leader_board"
         android:onClick="toRaiting"
-        android:visibility="invisible"
-        tools:visibility="visible"/>
+        android:visibility="visible" />
 </LinearLayout>

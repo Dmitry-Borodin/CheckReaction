@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.ui.gamescore.ComplexScoreActivity;
+import com.two_two.checkreaction.ui.gamescore.complex.ComplexScoreActivity;
 import com.two_two.checkreaction.models.App;
 import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 import com.two_two.checkreaction.domain.firebase.FirebaseSender;

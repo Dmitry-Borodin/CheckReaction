@@ -12,6 +12,6 @@ class StopWatch(
     }
 
     fun getCurrentResult(): Long {
-        return initialTime - System.currentTimeMillis()
+        return  System.currentTimeMillis() - initialTime
     }
 }

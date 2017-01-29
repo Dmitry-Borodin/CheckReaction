@@ -31,18 +31,20 @@
             android:launchMode="singleTask"
             android:parentActivityName=".ui.startscreen.StartActivity" />
         <activity
-            android:name=".ui.gamescore.ComplexScoreActivity"
+            android:name=".ui.gamescore.complex.ComplexScoreActivity"
             android:parentActivityName=".ui.startscreen.StartActivity" />
         <activity android:name=".ui.scienceproject.ScienceActivitySplash" />
-        <activity android:name=".ui.scienceproject.ScienceTestActivity"
-            android:configChanges="orientation|keyboardHidden"
-            />
+        <activity
+            android:name=".ui.scienceproject.ScienceTestActivity"
+            android:configChanges="orientation|keyboardHidden" />
         <!-- put your value here -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="b6c8885fa885272bfabda2768aa069255689742b" />
 
-        <activity android:name=".ui.gamescore.ScienceScoreActivity"></activity>
+        <activity android:name=".ui.gamescore.complex.ScienceScoreActivity" />
+        <activity android:name=".ui.finishscreen.ScienceFinishActivity" />
+        <activity android:name=".ui.gamescore.science.ScienceScoreActivity"></activity>
     </application>
 
 </manifest>

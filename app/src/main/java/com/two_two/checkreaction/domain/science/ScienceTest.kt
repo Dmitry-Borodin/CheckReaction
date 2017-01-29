@@ -8,7 +8,6 @@ import com.two_two.checkreaction.domain.science.colors.ColourShaker
 import com.two_two.checkreaction.models.game.TestType
 import com.two_two.checkreaction.models.science.ScienceIterationData
 import com.two_two.checkreaction.models.science.ScienceTestResult
-import com.two_two.checkreaction.domain.science.ScienceTargetGenerator
 import java.util.*
 
 /**
@@ -43,10 +42,11 @@ class ScienceTest(val colourProvider: ColourProvider,
     }
 
     private fun beginIteration() {
+        stopWatch.reset()
         colourShaker.shake()
         delayTimer.runDelayed(DelayTimerCallback { onTimeOut() })
-        val iteractionData = ScienceIterationData(colourShaker.shakedOrder)
-        callback?.showNextScreen(iteractionData)
+        val iterationData = ScienceIterationData(colourShaker.shakedOrder)
+        callback?.showNextScreen(iterationData)
     }
 
     private fun onTimeOut() {
@@ -61,8 +61,11 @@ class ScienceTest(val colourProvider: ColourProvider,
         }
     }
 
-    private fun isClickedCurrectly(tailClickedIndex: Int) =
-            ScienceTargetGenerator.chosenColorIndex == (colourShaker.getRealIndex(tailClickedIndex))
+    private fun isClickedCurrectly(tailClickedIndex: Int): Boolean {
+        val realClickedIndex = colourShaker.getShakedIndex(tailClickedIndex)
+        return ScienceTargetGenerator.chosenColorIndex == realClickedIndex
+    }
+
 
     private fun onIterationFailed() {
         failedIterations++

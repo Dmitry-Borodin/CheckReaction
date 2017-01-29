@@ -1,4 +1,4 @@
-package com.two_two.checkreaction.ui.gamescore
+package com.two_two.checkreaction.ui.gamescore.complex
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -9,6 +9,7 @@ import com.firebase.client.Firebase
 import com.two_two.checkreaction.BuildConfig
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.models.game.FirebaseComplexResult
+import com.two_two.checkreaction.ui.gamescore.OnLoadListener
 
 /**
  * Showing gamescores for Complex Test from Firebase backend.

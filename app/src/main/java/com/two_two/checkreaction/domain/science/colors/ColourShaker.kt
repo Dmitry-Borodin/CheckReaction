@@ -28,7 +28,7 @@ class ColourShaker() {
     }
 
     fun getShakedIndex(realIndex : Int) : Int {
-        if (shakedOrder.size >= realIndex) {
+        if (shakedOrder.size < realIndex) {
             return -1
         }
         return shakedOrder.get(realIndex)

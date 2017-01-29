@@ -31,6 +31,13 @@
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/science_splash_posttext"/>
 
+        <TextView
+            android:id="@+id/chosen_colour_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/default_margin"
+            tools:text="@string/science_splash_posttext"/>
+
         <Button
             android:id="@+id/science_splash_next_button"
             android:layout_width="wrap_content"

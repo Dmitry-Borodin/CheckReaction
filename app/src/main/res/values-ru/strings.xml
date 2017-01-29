@@ -26,4 +26,24 @@
     <string name="error_cannot_find_result">Нет результатов теста. Пожалуйста, свяжитесь с разработчиком.</string>
     <string name="loading_title">Загрузка</string>
     <string name="loading_message">Загрузка рейтинга...</string>
+    <string name="accuracy">\"ТОЧНОСТЬ: \"</string>
+    <string name="chosenTextWillBe">\"Выбранный цвет будет \"</string>
+    <string name="colour_black">черный</string>
+    <string name="colour_blue">синий</string>
+    <string name="colour_red">красный</string>
+    <string name="colour_white">белый</string>
+    <string name="colour_yellow">жёлтый</string>
+    <string name="hits">попаданий</string>
+    <string name="milliseconds_descroption">\" мс в среднем при правильном попадании\"</string>
+    <string name="of">\" из \"</string>
+    <string name="science_splash_main_text">"Этот эксперимент будет проверять вашу реакцию, "</string>
+    <string name="science_splash_next_button">Начать тест</string>
+    <string name="science_splash_posttext">Нажмите на плитку выбранного цвета как только увидите ее. Каждый экран будет показываться только одну секунду.</string>
+    <string name="science_splash_title">Научный проект Конарка.</string>
+    <string name="science_test">Научный тест</string>
+    <string name="science_test_header1">\"Нажмите на \"</string>
+    <string name="science_test_header2">\" плитку\"</string>
+    <string name="show_leaderboard">Показать результаты</string>
+    <string name="speed">\"СКОРОСТЬ \"</string>
+    <string name="tapped_ok">\" было нажать правильно\"</string>
 </resources>

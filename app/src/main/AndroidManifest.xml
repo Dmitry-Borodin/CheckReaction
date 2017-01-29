@@ -44,7 +44,6 @@
 
         <activity android:name=".ui.gamescore.science.ScienceScoreActivity" />
         <activity android:name=".ui.finishscreen.ScienceFinishActivity" />
-        <activity android:name=".ui.gamescore.science.ScienceScoreActivity"></activity>
     </application>
 
 </manifest>

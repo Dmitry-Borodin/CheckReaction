@@ -1,8 +1,7 @@
 package com.two_two.checkreaction.domain.game
 
 import android.os.Handler
-
-import java.util.Random
+import java.util.*
 
 /**
  * Created by Dmitry Borodin on 1/4/2016.
@@ -10,15 +9,23 @@ import java.util.Random
  * Runs provided code after random delay with preconfigured settings.
  */
 class RandomDelayTimer : DelayTimer {
-    private val mRandom = Random()
+
+    private val random = Random()
+    private val handler = Handler()
+    private var runnable : Runnable? = null
 
     override fun runDelayed(delayTimerCallback: DelayTimerCallback) {
-        Handler().postDelayed({ delayTimerCallback.delayedCode() }, randomTime.toLong())
+        runnable = Runnable{ delayTimerCallback.delayedCode() }
+        handler.postDelayed(runnable, randomTime.toLong())
+    }
+
+    override fun forgetDelayetCode() {
+        handler.removeCallbacks(runnable)
     }
 
     private //two randoms to more nice delay distribution - less possible min delay
     val randomTime: Int
-        get() = mRandom.nextInt(RANDOM_DELAY1) + mRandom.nextInt(RANDOM_DELAY2) + MIN_DELAY
+        get() = random.nextInt(RANDOM_DELAY1) + random.nextInt(RANDOM_DELAY2) + MIN_DELAY
 
     companion object {
         private val MIN_DELAY = 500

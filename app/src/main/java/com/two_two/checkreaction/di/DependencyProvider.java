@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.two_two.checkreaction.domain.science.ScienceTest;
 import com.two_two.checkreaction.domain.science.colors.ColourProvider;
+import com.two_two.checkreaction.domain.science.colors.ColourShaker;
 import com.two_two.checkreaction.models.App;
 
 /**
@@ -21,7 +22,7 @@ public class DependencyProvider {
     @NonNull
     public static ScienceTest getScienceTest() {
         if (scienceTest == null) {
-            scienceTest = new ScienceTest(getColourProvider());
+            scienceTest = new ScienceTest(getColourProvider(), new ColourShaker());
         }
         return scienceTest;
     }

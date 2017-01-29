@@ -11,15 +11,17 @@ class ColourShaker() {
     val random = Random()
 
     fun shake() {
+        shakedOrder.clear()
         generateIndexes()
         while (setOfIndexes.size > 0) {
             val index = random.nextInt(setOfIndexes.size)
             shakedOrder.add(setOfIndexes.get(index))
-            setOfIndexes.remove(index)
+            setOfIndexes.removeAt(index)
         }
     }
 
     private fun generateIndexes() {
+        setOfIndexes.clear()
         for (i in 0 .. ColourProvider.COLOURS_AVAILABLE_SCIENCE) {
             setOfIndexes.add(i)
         }

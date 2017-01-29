@@ -32,23 +32,23 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
         presenter.unBindActivity()
     }
 
-    override fun setFirstViewColor(color: Int) {
+    override fun setFirstViewColour(color: Int) {
         science_tile1.setBackgroundColor(color)
     }
 
-    override fun setSecondViewColor(color: Int) {
+    override fun setSecondViewColour(color: Int) {
         science_tile2.setBackgroundColor(color)
     }
 
-    override fun setThirdViewColor(color: Int) {
+    override fun setThirdViewColour(color: Int) {
         science_tile3.setBackgroundColor(color)
     }
 
-    override fun setForthViewColor(color: Int) {
+    override fun setForthViewColour(color: Int) {
         science_tile4.setBackgroundColor(color)
     }
 
-    override fun setRightColor(color: Int, colorName: String) {
+    override fun setTargetColour(color: Int, colorName: String) {
         header_advice.setTextColor(color)
         header_advice.text = getString(R.string.science_test_header1) + colorName + getString(R.string.science_test_header2)
     }

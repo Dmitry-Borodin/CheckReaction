@@ -37,6 +37,6 @@
     <string name="colour_red">red</string>
     <string name="colour_blue">blue</string>
     <string name="colour_black">black</string>
-    <string name="science_test_header1">Tap the</string>
-    <string name="science_test_header2">tile</string>
+    <string name="science_test_header1">"Tap the "</string>
+    <string name="science_test_header2">" tile"</string>
 </resources>

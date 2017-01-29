@@ -12,9 +12,14 @@ class ColourProvider(val context: Context = App.getInstance()) {
     companion object {
         val COLOURS_AVAILABLE_SCIENCE = 3 //including 0
     }
+
     //todo add anotation that returning  resource
     //todo add annotations to limit available indexes
     fun getColorResource(index: Int): Int {
+        return context.resources.getColor(getColorId(index))
+    }
+
+    fun getColorId(index: Int): Int {
         return when (index) {
             0 -> R.color.white
             1 -> R.color.yellow
@@ -24,7 +29,7 @@ class ColourProvider(val context: Context = App.getInstance()) {
         }
     }
 
-    fun getColourName(index: Int) : String {
+    fun getColourName(index: Int): String {
         return when (index) {
             0 -> context.getString(R.string.colour_white)
             1 -> context.getString(R.string.colour_yellow)

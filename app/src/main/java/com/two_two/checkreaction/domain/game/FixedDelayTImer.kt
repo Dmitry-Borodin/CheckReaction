@@ -1,17 +1,25 @@
 package com.two_two.checkreaction.domain.game
 
 import android.os.Handler
-import java.util.*
 
 /**
  * @author Dmitry Borodin on 2017-01-29.
  */
 
-class FixedDelayTimer() : DelayTimer {
+class FixedDelayTimer : DelayTimer {
+
+
     private val DELAY = 1000L //1 second
-    private val random = Random()
+    private val handler = Handler()
+    private var runnable: Runnable? = null
 
     override fun runDelayed(delayTimerCallback: DelayTimerCallback) {
-        Handler().postDelayed({ delayTimerCallback.delayedCode() }, DELAY)
+        runnable = Runnable { delayTimerCallback.delayedCode() }
+        handler.postDelayed(runnable, DELAY)
     }
+
+    override fun forgetDelayetCode() {
+        handler.removeCallbacks(runnable)
+    }
+
 }

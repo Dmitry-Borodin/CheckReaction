@@ -1,40 +1,72 @@
 package com.two_two.checkreaction.ui.scienceproject
 
-import android.content.Context
 import com.two_two.checkreaction.di.DependencyProvider
-import com.two_two.checkreaction.models.App
+import com.two_two.checkreaction.domain.science.ScienceTargetGenerator
+import com.two_two.checkreaction.domain.science.ScienceTestCallback
+import com.two_two.checkreaction.models.science.ScienceIterationData
+import com.two_two.checkreaction.models.science.ScienceTestResult
 
 /**
  * @author Dmitry Borodin on 2017-01-29.
  */
-class ScienceTestPresenter(val appContext: Context? = App.getInstance()) : ScienceTestContract.Presenter {
+class ScienceTestPresenter : ScienceTestContract.Presenter {
 
-    var view: ScienceTestContract.View? = null
     val scienceTest = DependencyProvider.getScienceTest()
+    val colourProvider = DependencyProvider.getColourProvider()
+    var view: ScienceTestContract.View? = null
 
+    override fun bindActivity(bindedView: ScienceTestContract.View) {
+        this.view = bindedView
+        showTargetColour()
+        scienceTest.callback = object : ScienceTestCallback {
+            override fun showNextScreen(iterationData: ScienceIterationData) {
+                showNewIterationData(iterationData)
+            }
 
-    override fun bindActivity(view: ScienceTestContract.View) {
-        this.view = view
+            override fun testFinished(result: ScienceTestResult) {
+                view?.navigateToResults(result)
+            }
+        }
+        scienceTest.start()
+    }
+
+    private fun showNewIterationData(iterationData: ScienceIterationData) {
+        val firstColour = colourProvider.getColorResource(iterationData.shakedOrder.get(0))
+        val secondColour = colourProvider.getColorResource(iterationData.shakedOrder.get(1))
+        val thirdColour = colourProvider.getColorResource(iterationData.shakedOrder.get(2))
+        val forthColour = colourProvider.getColorResource(iterationData.shakedOrder.get(3))
+        view?.setFirstViewColour(firstColour)
+        view?.setSecondViewColour(secondColour)
+        view?.setThirdViewColour(thirdColour)
+        view?.setForthViewColour(forthColour)
+    }
+
+    private fun showTargetColour() {
+        val targetColor = ScienceTargetGenerator.chosenColorIndex
+        view?.setTargetColour(colourProvider.getColorId(targetColor),
+                colourProvider.getColourName(targetColor))
     }
 
     override fun unBindActivity() {
         view = null
+        scienceTest.callback = null
     }
 
     override fun onFirstViewClicked() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        scienceTest.onTapped(0)
     }
 
     override fun onSecondViewClicked() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        scienceTest.onTapped(1)
     }
 
     override fun onThirdViewClicked() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        scienceTest.onTapped(2)
     }
 
     override fun onForthViewClicked() {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+        scienceTest.onTapped(3)
     }
+
 
 }

@@ -6,6 +6,7 @@ import java.util.*
  * @author Dmitry Borodin on 2017-01-29.
  */
 object ResultsGenerator {
+
     fun calcAverageReaction(resultList: ArrayList<Long>): Long {
         if (resultList.size == 0) return 0
         var resultSumm: Long = 0

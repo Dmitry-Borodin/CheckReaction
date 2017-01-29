@@ -8,16 +8,16 @@ import com.two_two.checkreaction.models.science.ScienceTestResult
 
 interface ScienceTestContract {
     interface View {
-        fun setFirstViewColor(color: Int)
-        fun setSecondViewColor(color: Int)
-        fun setThirdViewColor(color: Int)
-        fun setForthViewColor(color: Int)
-        fun setRightColor(color: Int, colorName: String)
+        fun setFirstViewColour(color: Int)
+        fun setSecondViewColour(color: Int)
+        fun setThirdViewColour(color: Int)
+        fun setForthViewColour(color: Int)
+        fun setTargetColour(color: Int, colorName: String)
         fun navigateToResults(result: ScienceTestResult)
     }
 
     interface Presenter {
-        fun bindActivity(view: View)
+        fun bindActivity(bindedView: View)
         fun unBindActivity()
         fun onFirstViewClicked()
         fun onSecondViewClicked()

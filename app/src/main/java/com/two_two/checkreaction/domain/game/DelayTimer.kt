@@ -5,4 +5,6 @@ package com.two_two.checkreaction.domain.game
  */
 interface DelayTimer {
     fun runDelayed(delayTimerCallback: DelayTimerCallback)
+
+    fun forgetDelayetCode()
 }

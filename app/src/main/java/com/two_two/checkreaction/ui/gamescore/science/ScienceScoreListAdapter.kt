@@ -4,8 +4,8 @@ import android.app.Activity
 import android.graphics.Color
 import android.view.View
 import android.widget.TextView
-import com.firebase.client.Query
-import com.firebase.ui.FirebaseListAdapter
+import com.firebase.ui.database.FirebaseListAdapter
+import com.google.firebase.database.Query
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.models.science.FirebaseScienceResult
 import com.two_two.checkreaction.ui.gamescore.OnLoadListener
@@ -37,7 +37,7 @@ class ScienceScoreListAdapter(
         }
 
         val oneStartedPosition = position + 1 //positions from 1, not from 0
-        number.text = oneStartedPosition.toString()
+        number.text = "" + oneStartedPosition
         username.text = model.username
         average.text = model.average.toString()
         median.text = model.currectHits.toString()

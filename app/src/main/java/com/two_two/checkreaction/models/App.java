@@ -4,7 +4,6 @@ import android.app.Application;
 import android.support.annotation.NonNull;
 
 import com.crashlytics.android.Crashlytics;
-import com.firebase.client.Firebase;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -21,7 +20,6 @@ public class App extends Application {
         super.onCreate();
         sInstance = this;
         Fabric.with(this.getApplicationContext(), new Crashlytics());
-        Firebase.setAndroidContext(this.getApplicationContext());
         mLocalData = new LocalData(this.getApplicationContext());
     }
 

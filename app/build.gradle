@@ -60,19 +60,19 @@ android {
 dependencies {
 //    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "com.firebase:firebase-client-android:$rootProject.ext.firebaseVersion"
-    compile "com.firebaseui:firebase-ui:$rootProject.ext.fibaseUiVersion"
+    compile "com.google.firebase:firebase-database:$rootProject.firebaseVersion"
+    // FirebaseUI Database only
+    compile "com.firebaseui:firebase-ui-database:$rootProject.fibaseUiVersion"
     compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion") {
         transitive = true;
     }
     compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    compile "com.android.support.constraint:constraint-layout:1.0.0-beta4"
     compile "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
 
     testCompile "junit:junit:$rootProject.ext.junitVersion"
 
     // Espresso UI Testing dependencies.
-    androidTestCompile ("com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion", {
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 //    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$rootProject.ext.espressoVersion"
@@ -81,4 +81,8 @@ dependencies {
     // Android Testing Support Library's runner and rules
 //    androidTestCompile "com.android.support.test:runner:$rootProject.ext.runnerVersion"
 //    androidTestCompile "com.android.support.test:rules:$rootProject.ext.runnerVersion"
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+
 }
+
+apply plugin: 'com.google.gms.google-services'

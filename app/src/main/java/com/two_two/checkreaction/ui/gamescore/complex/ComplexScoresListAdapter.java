@@ -5,8 +5,8 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-import com.firebase.client.Query;
-import com.firebase.ui.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.database.Query;
 import com.two_two.checkreaction.R;
 import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 import com.two_two.checkreaction.ui.gamescore.OnLoadListener;

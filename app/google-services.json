@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "443865847969",
+    "firebase_url": "https://checkreaction-base.firebaseio.com",
+    "project_id": "checkreaction-base",
+    "storage_bucket": "checkreaction-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443865847969:android:899d5d2e87f69774",
+        "android_client_info": {
+          "package_name": "com.two_two.checkreaction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443865847969-94ht3s0neevhegpidtilvh25hvmcu12e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX47sZsfWZicpMrho5khTxDfmmupdPV8w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

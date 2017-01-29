@@ -1,12 +1,14 @@
 package com.two_two.checkreaction.domain.firebase;
 
-import com.firebase.client.Firebase;
-import com.firebase.client.ServerValue;
-import com.firebase.client.annotations.NotNull;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.two_two.checkreaction.BuildConfig;
 import com.two_two.checkreaction.models.game.FirebaseComplexResult;
 import com.two_two.checkreaction.models.science.FirebaseScienceResult;
 import com.two_two.checkreaction.utils.Constants;
+
+import org.jetbrains.annotations.NotNull;
 
 
 public class FirebaseSender {
@@ -37,7 +39,7 @@ public class FirebaseSender {
         }
         complexTestResult = testResult;
 
-        Firebase fb = new Firebase(BuildConfig.FIREBASE_ROOT).child(BuildConfig.FIREBASE_GAMESCORES);
+        DatabaseReference fb = FirebaseDatabase.getInstance().getReference(BuildConfig.FIREBASE_GAMESCORES);
         fb = fb.push(); //new line in db
         fb.setValue(testResult);
         fb.child(Constants.TIMESTAMP).setValue(ServerValue.TIMESTAMP);
@@ -49,7 +51,8 @@ public class FirebaseSender {
         }
         scienceResult = testResult;
 
-        Firebase fb = new Firebase(BuildConfig.FIREBASE_ROOT).child(BuildConfig.SCIENCE_GAMESCORES);
+        DatabaseReference fb = FirebaseDatabase.getInstance().getReference()
+                .child(BuildConfig.SCIENCE_GAMESCORES);
         fb = fb.push(); //new line in db
         fb.setValue(testResult);
         fb.child(Constants.TIMESTAMP).setValue(ServerValue.TIMESTAMP);

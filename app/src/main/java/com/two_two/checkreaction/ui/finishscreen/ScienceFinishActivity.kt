@@ -61,8 +61,7 @@ class ScienceFinishActivity : Activity() {
     }
 
     private fun updateScienceTestResult() {
-        if (firebaseResult == null)
-            return
-        FirebaseSender.getInstance().updateScienceTestResult(firebaseResult)
+        val fireResult = firebaseResult ?: return
+        FirebaseSender.getInstance().updateScienceTestResult(fireResult)
     }
 }

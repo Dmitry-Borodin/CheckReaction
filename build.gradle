@@ -10,6 +10,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'com.google.gms:google-services:3.0.0'
     }
 }
 
@@ -22,9 +23,9 @@ allprojects {
 ext {
     // App dependencies
     supportVersion = '25.0.1'
-    firebaseVersion = '2.5.0+'
+    firebaseVersion = '10.0.1'
     crashlyticsVersion = '2.5.5@aar'
-    fibaseUiVersion = '0.2.2'
+    fibaseUiVersion = '1.1.1'
     junitVersion = '4.12'
     runnerVersion = '0.4.1'
     rulesVersion = '0.4.1'

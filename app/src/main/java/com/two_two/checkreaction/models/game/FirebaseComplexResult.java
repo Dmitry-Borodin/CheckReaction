@@ -11,8 +11,6 @@ public class FirebaseComplexResult implements Parcelable {
     public static final String MEDIAN = "median";
     public static final String TAG = "FirebaseComplexResult";
 
-    //breaking AOSP naming policy for more nice getters names since Firebase have strict
-    // requirements about that.
     private long average;
     private long median;
     private String username;

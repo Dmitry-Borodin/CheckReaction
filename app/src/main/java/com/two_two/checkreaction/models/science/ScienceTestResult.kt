@@ -14,9 +14,4 @@ class ScienceTestResult(
     companion object {
         val TAG = "ScienceTestResult"
     }
-
-
-    fun getFIrebaseScienceResult() : FirebaseScienceResult {
-        return FirebaseScienceResult(currectHits, average)
-    }
 }

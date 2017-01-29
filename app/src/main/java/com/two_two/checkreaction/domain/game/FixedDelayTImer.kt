@@ -8,7 +8,6 @@ import android.os.Handler
 
 class FixedDelayTimer : DelayTimer {
 
-
     private val DELAY = 1000L //1 second
     private val handler = Handler()
     private var runnable: Runnable? = null

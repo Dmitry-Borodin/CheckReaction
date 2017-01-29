@@ -38,5 +38,4 @@ class ComplexScoreActivity : Activity() {
                 currentResult, OnLoadListener { dialog.dismiss() })
         mList.adapter = mAdapter
     }
-
 }

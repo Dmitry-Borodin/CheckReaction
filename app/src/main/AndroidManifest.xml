@@ -42,7 +42,7 @@
             android:name="io.fabric.ApiKey"
             android:value="b6c8885fa885272bfabda2768aa069255689742b" />
 
-        <activity android:name=".ui.gamescore.complex.ScienceScoreActivity" />
+        <activity android:name=".ui.gamescore.science.ScienceScoreActivity" />
         <activity android:name=".ui.finishscreen.ScienceFinishActivity" />
         <activity android:name=".ui.gamescore.science.ScienceScoreActivity"></activity>
     </application>

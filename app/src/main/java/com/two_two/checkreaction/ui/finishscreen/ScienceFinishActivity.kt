@@ -8,7 +8,7 @@ import android.view.View
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.domain.firebase.FirebaseSender
 import com.two_two.checkreaction.models.App
-import com.two_two.checkreaction.models.science.FirebaseScienceResult
+import com.two_two.checkreaction.models.firebase.FirebaseScienceResult
 import com.two_two.checkreaction.models.science.ScienceTestResult
 import com.two_two.checkreaction.ui.gamescore.science.ScienceScoreActivity
 import kotlinx.android.synthetic.main.activity_science_finish.*

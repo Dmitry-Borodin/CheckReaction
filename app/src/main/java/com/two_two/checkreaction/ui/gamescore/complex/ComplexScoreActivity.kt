@@ -9,7 +9,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.two_two.checkreaction.BuildConfig
 import com.two_two.checkreaction.R
-import com.two_two.checkreaction.models.game.FirebaseComplexResult
+import com.two_two.checkreaction.models.firebase.FirebaseComplexResult
 import com.two_two.checkreaction.ui.gamescore.OnLoadListener
 
 /**

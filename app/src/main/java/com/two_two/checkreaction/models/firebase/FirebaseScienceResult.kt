@@ -1,10 +1,12 @@
-package com.two_two.checkreaction.models.science
+package com.two_two.checkreaction.models.firebase
 
+import android.support.annotation.Keep
 import java.io.Serializable
 
 /**
  * @author Dmitry Borodin on 2017-01-29.
  */
+@Keep
 data class FirebaseScienceResult(
         var currectHits: Int = 0, //of 10 attapts
         var average: Long = 0L,

@@ -1,7 +1,7 @@
 package com.two_two.checkreaction.domain.firebase;
 
 
-import com.two_two.checkreaction.models.game.FirebaseComplexResult;
+import com.two_two.checkreaction.models.firebase.FirebaseComplexResult;
 
 import org.junit.Test;
 

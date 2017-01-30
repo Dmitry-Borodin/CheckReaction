@@ -4,8 +4,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.two_two.checkreaction.BuildConfig;
-import com.two_two.checkreaction.models.game.FirebaseComplexResult;
-import com.two_two.checkreaction.models.science.FirebaseScienceResult;
+import com.two_two.checkreaction.models.firebase.FirebaseComplexResult;
+import com.two_two.checkreaction.models.firebase.FirebaseScienceResult;
 import com.two_two.checkreaction.utils.Constants;
 
 import org.jetbrains.annotations.NotNull;

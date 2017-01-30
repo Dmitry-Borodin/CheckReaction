@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.google.firebase.database.FirebaseDatabase
 import com.two_two.checkreaction.BuildConfig
 import com.two_two.checkreaction.R
-import com.two_two.checkreaction.models.science.FirebaseScienceResult
+import com.two_two.checkreaction.models.firebase.FirebaseScienceResult
 import com.two_two.checkreaction.ui.gamescore.OnLoadListener
 import kotlinx.android.synthetic.main.activity_science_score.*
 

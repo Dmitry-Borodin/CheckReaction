@@ -31,7 +31,7 @@
 -printmapping mapping.txt
 
 # Basic ProGuard rules for Firebase Android SDK 2.0.0+
--keep class com.two_two.checkreaction.models.firebase.** { *; }
+-keep class com.two_two.checkreaction.domain.firebase.** { *; }
 -keepnames class com.fasterxml.jackson.** { *; }
 -keepnames class javax.servlet.** { *; }
 -keepnames class org.ietf.jgss.** { *; }

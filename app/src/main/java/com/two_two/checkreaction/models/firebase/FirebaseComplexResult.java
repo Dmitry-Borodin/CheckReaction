@@ -1,11 +1,13 @@
-package com.two_two.checkreaction.models.game;
+package com.two_two.checkreaction.models.firebase;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.Keep;
 
 /**
  * POJO for storing results of complex test in firebase
  */
+@Keep
 public class FirebaseComplexResult implements Parcelable {
 
     public static final String MEDIAN = "median";

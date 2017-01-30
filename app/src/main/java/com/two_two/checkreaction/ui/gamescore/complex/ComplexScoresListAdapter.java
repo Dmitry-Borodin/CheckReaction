@@ -36,7 +36,11 @@ public class ComplexScoresListAdapter extends FirebaseListAdapter<FirebaseComple
         TextView average = (TextView) v.findViewById(R.id.item_score_average);
         TextView median = (TextView) v.findViewById(R.id.item_score_median);
 
-        if (model.equals(mCurrentResult)) v.setBackgroundColor(Color.RED);
+        if (model.equals(mCurrentResult)) {
+            v.setBackgroundColor(Color.RED);
+        } else {
+            v.setBackgroundColor(Color.WHITE);
+        }
         if (!mWasLoaded) {
             mWasLoaded = true;
             mOnLoadListener.onLoaded();

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.crashlytics.android.Crashlytics;
 
+import io.fabric.sdk.android.BuildConfig;
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -19,7 +20,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-        Fabric.with(this.getApplicationContext(), new Crashlytics());
+        if (!BuildConfig.DEBUG){
+            Fabric.with(this.getApplicationContext(), new Crashlytics());
+        }
         mLocalData = new LocalData(this.getApplicationContext());
     }
 

@@ -28,8 +28,8 @@ android {
         applicationId "com.two_two.checkreaction"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 16
-        versionName "2.4"
+        versionCode 17
+        versionName "3.0"
     }
 
     //Firebase repo addresses

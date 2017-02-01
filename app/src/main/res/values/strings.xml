@@ -43,7 +43,7 @@
     <string name="of">" of "</string>
     <string name="tapped_ok">" tapped correctly."</string>
     <string name="speed">"SPEED: "</string>
-    <string name="milliseconds_descroption">" milliseconds average time it took you to tap on each tail correctly"</string>
+    <string name="milliseconds_descroption">" milliseconds average time it took you to tap on each tile correctly"</string>
     <string name="chosenTextWillBe">"Chosen text colour will be "</string>
     <string name="show_leaderboard">Show leaderboard</string>
     <string name="hits">hits</string>

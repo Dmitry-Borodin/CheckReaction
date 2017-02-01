@@ -23,21 +23,21 @@
         android:gravity="start|center_vertical" />
 
     <TextView
+        android:id="@+id/accuracy_result_text"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:text="accuracy result text"
-        android:id="@+id/accuracy_result_text"
         android:gravity="center_horizontal|top" />
 
     <TextView
+        android:id="@+id/average_result_text"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:text="average result text"
-        android:id="@+id/average_result_text"
         android:gravity="center_horizontal|top"/>
 
     <Button

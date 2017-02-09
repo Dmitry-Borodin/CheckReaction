@@ -1,6 +1,8 @@
 package com.two_two.checkreaction.domain.science.colors
 
 import android.content.Context
+import android.os.Build
+import com.two_two.checkreaction.BuildConfig
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.models.App
 
@@ -9,14 +11,14 @@ import com.two_two.checkreaction.models.App
  */
 class ColourProvider(val context: Context = App.getInstance()) {
 
-    companion object {
-        val COLOURS_AVAILABLE_SCIENCE = 3 //including 0
-    }
-
-    //todo add anotation that returning  resource
+    //todo add anotation that returning resource
     //todo add annotations to limit available indexes
     fun getColorResource(index: Int): Int {
-        return context.resources.getColor(getColorId(index))
+        if (Build.VERSION.SDK_INT > 23) {
+            return context.resources.getColor(getColorId(index), context.theme)
+        }else {
+            return context.resources.getColor(getColorId(index))
+        }
     }
 
     fun getColorId(index: Int): Int {

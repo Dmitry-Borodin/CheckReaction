@@ -13,8 +13,7 @@ import java.util.*
 /**
  * @author Dmitry Borodin on 2017-01-29.
  */
-class ScienceTest(val colourProvider: ColourProvider,
-                  val colourShaker: ColourShaker = ColourShaker()) {
+class ScienceTest(val colourShaker: ColourShaker = ColourShaker()) {
 
     val delayTimer = FixedDelayTimer()
     val stopWatch = StopWatch()

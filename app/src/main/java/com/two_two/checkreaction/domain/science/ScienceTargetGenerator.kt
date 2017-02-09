@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.domain.science
 
 import com.two_two.checkreaction.domain.science.colors.ColourProvider
+import com.two_two.checkreaction.utils.Constants
 import java.util.*
 
 /**
@@ -14,5 +15,5 @@ object ScienceTargetGenerator {
         chosenColorIndex = pickRandomColourIndex()
     }
 
-    private fun pickRandomColourIndex() = Random().nextInt(ColourProvider.COLOURS_AVAILABLE_SCIENCE + excludedElement)
+    private fun pickRandomColourIndex() = Random().nextInt(Constants.COLOURS_AVAILABLE_SCIENCE + excludedElement)
 }

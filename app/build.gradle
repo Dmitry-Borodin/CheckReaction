@@ -18,8 +18,6 @@ repositories {
     mavenCentral()
 }
 
-
-
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -58,7 +56,6 @@ android {
 }
 
 dependencies {
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "com.google.firebase:firebase-database:$rootProject.firebaseVersion"
     // FirebaseUI Database only
@@ -68,8 +65,6 @@ dependencies {
     }
     compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
     compile "com.afollestad.material-dialogs:core:$rootProject.materialDialogs"
-
-    testCompile "junit:junit:$rootProject.ext.junitVersion"
 
     // Espresso UI Testing dependencies.
     androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion", {
@@ -81,8 +76,7 @@ dependencies {
     // Android Testing Support Library's runner and rules
 //    androidTestCompile "com.android.support.test:runner:$rootProject.ext.runnerVersion"
 //    androidTestCompile "com.android.support.test:rules:$rootProject.ext.runnerVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
 }
-
 apply plugin: 'com.google.gms.google-services'

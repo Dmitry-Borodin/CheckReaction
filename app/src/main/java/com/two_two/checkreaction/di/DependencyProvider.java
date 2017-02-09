@@ -1,5 +1,6 @@
 package com.two_two.checkreaction.di;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -17,12 +18,13 @@ import com.two_two.checkreaction.models.App;
 public class DependencyProvider {
 
     private static ScienceTest scienceTest;
+    @SuppressLint("StaticFieldLeak") //this is App context - it's singleton
     private static ColourProvider colourProvider;
 
     @NonNull
     public static ScienceTest getScienceTest() {
         if (scienceTest == null) {
-            scienceTest = new ScienceTest(getColourProvider(), new ColourShaker());
+            scienceTest = new ScienceTest(new ColourShaker());
         }
         return scienceTest;
     }

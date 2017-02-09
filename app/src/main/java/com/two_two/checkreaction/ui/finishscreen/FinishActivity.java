@@ -16,6 +16,7 @@ import com.two_two.checkreaction.domain.firebase.FirebaseSender;
 import com.two_two.checkreaction.models.game.TestResult;
 import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.ui.reactiontest.TestActivity;
+import com.two_two.checkreaction.ui.startscreen.StartActivity;
 
 
 public class FinishActivity extends Activity {
@@ -78,9 +79,14 @@ public class FinishActivity extends Activity {
     }
 
     public void againMethod(View view) {
-        Intent intent = new Intent(this, TestActivity.class);
-        intent.putExtra(TestType.TAG, mTestResult.getTestType());
-        startActivity(intent);
+        if (mTestResult == null) {
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, TestActivity.class);
+            intent.putExtra(TestType.TAG, mTestResult.getTestType());
+            startActivity(intent);
+        }
     }
 
     //  defined in XML

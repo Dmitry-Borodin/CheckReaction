@@ -8,11 +8,12 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.ui.finishscreen.FinishActivity;
 import com.two_two.checkreaction.models.game.TestResult;
 import com.two_two.checkreaction.models.game.TestType;
+import com.two_two.checkreaction.ui.finishscreen.FinishActivity;
 
 public class TestActivity extends Activity implements TestContract.View {
 
@@ -32,7 +33,10 @@ public class TestActivity extends Activity implements TestContract.View {
         mLayout = findViewById(R.id.ac_test_main_layout);
         if (savedInstanceState == null) {
             TestType testType = (TestType) getIntent().getSerializableExtra(TestType.TAG);
-            assert (testType != null);
+            if (testType == null) {
+                Toast.makeText(this, R.string.unknown_test_type, Toast.LENGTH_LONG).show();
+                finish();
+            }
             mPresenter.registerActivity(this);
             mPresenter.initialize(testType, getApplicationContext());
         } else {

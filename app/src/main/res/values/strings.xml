@@ -47,4 +47,5 @@
     <string name="chosenTextWillBe">"Chosen text colour will be "</string>
     <string name="show_leaderboard">Show leaderboard</string>
     <string name="hits">hits</string>
+    <string name="unknown_test_type">Unknown test type</string>
 </resources>

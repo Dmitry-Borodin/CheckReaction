@@ -46,4 +46,5 @@
     <string name="show_leaderboard">Показать результаты</string>
     <string name="speed">\"СКОРОСТЬ \"</string>
     <string name="tapped_ok">\" было нажать правильно\"</string>
+    <string name="unknown_test_type">Неизвестный тип теста</string>
 </resources>

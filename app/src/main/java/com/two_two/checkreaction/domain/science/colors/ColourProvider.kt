@@ -17,6 +17,7 @@ class ColourProvider(val context: Context = App.getInstance()) {
         if (Build.VERSION.SDK_INT > 23) {
             return context.resources.getColor(getColorId(index), context.theme)
         }else {
+            @Suppress("DEPRECATION")
             return context.resources.getColor(getColorId(index))
         }
     }

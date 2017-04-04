@@ -20,7 +20,9 @@
         </activity>
         <activity
             android:name=".ui.reactiontest.TestActivity"
-            android:parentActivityName=".ui.startscreen.StartActivity">
+            android:parentActivityName=".ui.startscreen.StartActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
+            <!--handle orientation changes just because recreation activity take time, comparable to human reaction-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.startscreen.StartActivity" />

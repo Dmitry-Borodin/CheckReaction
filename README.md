@@ -1,7 +1,7 @@
 # CheckReaction
 About
 ------
-Reacts to touch, unlike many similar apps, which reacts to release display. This allows more accuratly measure real reaction time.
+Reacts to touch, unlike many similar apps, which reacts to release display. This allows more accurately measure real reaction time.
 Few different modes with leaderboard powered by Google Firebase
 
 Using

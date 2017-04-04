@@ -22,7 +22,7 @@ class ScienceFinishActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_science_finish)
 
-        testResult = intent.getSerializableExtra(ScienceTestResult.TAG) as ScienceTestResult
+        testResult = intent.getSerializableExtra(ScienceTestResult.TAG) as ScienceTestResult?
         if (testResult == null) {
             accuracy_result_text.setText(R.string.error_cannot_find_result)
             average_result_text.visibility = View.INVISIBLE

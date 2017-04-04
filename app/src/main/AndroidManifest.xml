@@ -20,9 +20,7 @@
         </activity>
         <activity
             android:name=".ui.reactiontest.TestActivity"
-            android:parentActivityName=".ui.startscreen.StartActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" >
-            <!--handle orientation changes just because recreation activity take time, comparable to human reaction-->
+            android:parentActivityName=".ui.startscreen.StartActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.startscreen.StartActivity" />
@@ -37,7 +35,7 @@
         <activity android:name=".ui.scienceproject.ScienceActivitySplash" />
         <activity
             android:name=".ui.scienceproject.ScienceTestActivity"
-            android:configChanges="orientation|keyboardHidden" />
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <!-- put your value here -->
         <meta-data
             android:name="io.fabric.ApiKey"

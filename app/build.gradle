@@ -26,7 +26,7 @@ android {
         applicationId "com.two_two.checkreaction"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 19
+        versionCode 20
         versionName "3.2"
     }
 

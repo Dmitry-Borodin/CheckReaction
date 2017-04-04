@@ -36,7 +36,7 @@
     <string name="hits">попаданий</string>
     <string name="milliseconds_descroption">\" мс в среднем при правильном попадании\"</string>
     <string name="of">\" из \"</string>
-    <string name="science_splash_main_text">"Этот эксперимент будет проверять вашу реакцию, "</string>
+    <string name="science_splash_main_text">\"Этот эксперимент должен выполняться сериями - сначала после расслабленного состояния, затем когда вас отвлекают разговором по телефону или перепиской. Цель - определить, как влияютвнешние факторы на реакцию.\"</string>
     <string name="science_splash_next_button">Начать тест</string>
     <string name="science_splash_posttext">Нажмите на плитку выбранного цвета как только увидите ее. Каждый экран будет показываться только одну секунду.</string>
     <string name="science_splash_title">Научный проект Конарка.</string>

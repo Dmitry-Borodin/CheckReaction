@@ -27,7 +27,7 @@
     <string name="error_cannot_find_result">Cannot find test result. Please, contact developer.</string>
     <string name="loading_title">Loading</string>
     <string name="loading_message">Loading scores data...</string>
-    <string name="science_splash_title">Konark’s Science Project \nMeasuring Reaction Time</string>
+    <string name="science_splash_title">Science Project\nMeasuring Reaction Time</string>
     <string name="science_splash_main_text">This experiment will test your reflexes (reaction time) in a controlled manner. The first series of tests will be performed when you are relaxed and not distracted. The tests will then be repeated when you are distracted, by having you speak on the phone while performing the test and, after you have spent a few minutes texting. The goal of this experiment is to see if your reflexes are impacted by being distracted or by spending time on texting</string>
     <string name="science_splash_posttext">Tap on the asked color area as soon as you see it, as quickly as you can. Each screen will only last 1 second and you will have 10 screens to play on.</string>
     <string name="science_splash_next_button">Begin the test</string>

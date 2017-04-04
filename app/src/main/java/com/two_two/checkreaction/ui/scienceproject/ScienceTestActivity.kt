@@ -24,12 +24,12 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.bindActivity(this)
+        presenter.bindView(this)
     }
 
     override fun onStop() {
         super.onStop()
-        presenter.unBindActivity()
+        presenter.unBindView()
     }
 
     override fun setFirstViewColour(color: Int) {

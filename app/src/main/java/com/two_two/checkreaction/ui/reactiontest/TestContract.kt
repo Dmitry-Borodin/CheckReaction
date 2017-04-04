@@ -12,19 +12,14 @@ interface TestContract {
 
     interface View {
         fun setWait(testNumber: Int, maxTests: Int)
-
         fun setReadyToTouch(backgroundColor: Int)
-
         fun showResult(result: TestResult)
     }
 
     interface Presenter {
         fun initialize(testType: TestType)
-
         fun viewTouched()
-
-        fun bind(activity: View)
-
-        fun unbind()
+        fun bindView(activity: View)
+        fun unbindView()
     }
 }

@@ -31,13 +31,13 @@ public class StartActivity extends Activity implements StartActivityContract {
     @Override
     protected void onStart() {
         super.onStart();
-        mPresenter.boundActivity(this);
+        mPresenter.bindActivity(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mPresenter.unboundActivity();
+        mPresenter.unbindActivity();
     }
 
     @Override

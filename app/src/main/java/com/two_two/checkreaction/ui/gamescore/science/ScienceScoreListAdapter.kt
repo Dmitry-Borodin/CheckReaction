@@ -41,7 +41,7 @@ class ScienceScoreListAdapter(
         }
 
         val oneStartedPosition = position + 1 //positions from 1, not from 0
-        number.text = "" + oneStartedPosition
+        number.text = oneStartedPosition.toString()
         username.text = model.username
         average.text = model.average.toString()
         median.text = model.currectHits.toString()

@@ -15,7 +15,7 @@ class ScienceTestPresenter : ScienceTestContract.Presenter {
     val colourProvider = DependencyProvider.getColourProvider()
     var view: ScienceTestContract.View? = null
 
-    override fun bindActivity(bindedView: ScienceTestContract.View) {
+    override fun bindView(bindedView: ScienceTestContract.View) {
         this.view = bindedView
         showTargetColour()
         scienceTest.callback = object : ScienceTestCallback {
@@ -31,10 +31,10 @@ class ScienceTestPresenter : ScienceTestContract.Presenter {
     }
 
     private fun showNewIterationData(iterationData: ScienceIterationData) {
-        val firstColour = colourProvider.getColorResource(iterationData.shakedOrder.get(0))
-        val secondColour = colourProvider.getColorResource(iterationData.shakedOrder.get(1))
-        val thirdColour = colourProvider.getColorResource(iterationData.shakedOrder.get(2))
-        val forthColour = colourProvider.getColorResource(iterationData.shakedOrder.get(3))
+        val firstColour = colourProvider.getColorResource(iterationData.shakedOrder[0])
+        val secondColour = colourProvider.getColorResource(iterationData.shakedOrder[1])
+        val thirdColour = colourProvider.getColorResource(iterationData.shakedOrder[2])
+        val forthColour = colourProvider.getColorResource(iterationData.shakedOrder[3])
         view?.setFirstViewColour(firstColour)
         view?.setSecondViewColour(secondColour)
         view?.setThirdViewColour(thirdColour)
@@ -47,7 +47,7 @@ class ScienceTestPresenter : ScienceTestContract.Presenter {
                 colourProvider.getColourName(targetColor))
     }
 
-    override fun unBindActivity() {
+    override fun unBindView() {
         view = null
         scienceTest.callback = null
     }

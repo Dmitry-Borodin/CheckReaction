@@ -16,6 +16,11 @@ import com.two_two.checkreaction.models.game.TestType
 import com.two_two.checkreaction.ui.finishscreen.FinishActivity
 
 class TestActivity : Activity(), TestContract.View {
+
+    companion object {
+        private const val BACKGROUND = "backgroundColor"
+    }
+
     private var presenter: TestPresenter = TestPresenter.instance
     private var textDownSmall: TextView? = null
     private var textInCenter: TextView? = null
@@ -34,7 +39,7 @@ class TestActivity : Activity(), TestContract.View {
                 finish()
                 return
             }
-            presenter.bind(this)
+            presenter.bindView(this)
             presenter.initialize(testType)
         } else {
             @Suppress("DEPRECATION")// it's fallback, new method
@@ -45,13 +50,13 @@ class TestActivity : Activity(), TestContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter.bind(this)
-        layout!!.setOnTouchListener { _, event -> onTouched(event) }
+        presenter.bindView(this)
+        layout?.setOnTouchListener { _, event -> onTouched(event) }
     }
 
     override fun onStop() {
         super.onStop()
-        presenter.unbind()
+        presenter.unbindView()
     }
 
     private fun onTouched(event: MotionEvent): Boolean {
@@ -90,10 +95,5 @@ class TestActivity : Activity(), TestContract.View {
         intent.putExtra(TestResult.TAG, result)
         startActivity(intent)
         finish()
-    }
-
-    companion object {
-
-        private val BACKGROUND = "backgroundColor"
     }
 }

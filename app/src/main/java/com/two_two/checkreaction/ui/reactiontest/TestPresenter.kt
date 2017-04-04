@@ -42,11 +42,11 @@ class TestPresenter private constructor() : TestContract.Presenter, ReactionTest
         }
     }
 
-    override fun bind(activity: TestContract.View) {
+    override fun bindView(activity: TestContract.View) {
         view = activity
     }
 
-    override fun unbind() {
+    override fun unbindView() {
         view = null
     }
 

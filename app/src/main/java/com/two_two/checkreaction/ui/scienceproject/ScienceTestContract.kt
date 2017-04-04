@@ -17,8 +17,8 @@ interface ScienceTestContract {
     }
 
     interface Presenter {
-        fun bindActivity(bindedView: View)
-        fun unBindActivity()
+        fun bindView(bindedView: View)
+        fun unBindView()
         fun onFirstViewClicked()
         fun onSecondViewClicked()
         fun onThirdViewClicked()

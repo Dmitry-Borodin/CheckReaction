@@ -11,11 +11,11 @@ class StartScreenPresenter() {
 
     private var mCurrentActivity: StartActivityContract? = null
 
-    fun boundActivity(activity: StartActivityContract) {
+    fun bindActivity(activity: StartActivityContract) {
         mCurrentActivity = activity
     }
 
-    fun unboundActivity() {
+    fun unbindActivity() {
         mCurrentActivity = null
     }
 

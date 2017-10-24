@@ -3,7 +3,6 @@ package com.two_two.checkreaction.ui.finishscreen
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.View
 import com.two_two.checkreaction.R
 import com.two_two.checkreaction.domain.firebase.FirebaseSender

@@ -59,5 +59,4 @@ class ScienceTestActivity : Activity(), ScienceTestContract.View {
         startActivity(intent)
         finish()
     }
-
 }

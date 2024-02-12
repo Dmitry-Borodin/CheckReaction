@@ -11,15 +11,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Halo">
-        <activity android:name=".ui.startscreen.StartActivity">
+        <activity android:name=".ui.startscreen.StartActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.reactiontest.TestActivity"
-            android:parentActivityName=".ui.startscreen.StartActivity">
+            android:parentActivityName=".ui.startscreen.StartActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.startscreen.StartActivity" />
@@ -27,7 +30,8 @@
         <activity
             android:name=".ui.finishscreen.FinishActivity"
             android:launchMode="singleTask"
-            android:parentActivityName=".ui.startscreen.StartActivity" />
+            android:parentActivityName=".ui.startscreen.StartActivity"
+            android:exported="true"/>
         <activity
             android:name=".ui.gamescore.complex.ComplexScoreActivity"
             android:parentActivityName=".ui.startscreen.StartActivity" />

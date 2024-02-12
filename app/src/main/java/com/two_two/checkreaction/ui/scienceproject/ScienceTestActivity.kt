@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_science_test.*
 import java.io.Serializable
 
 class ScienceTestActivity : Activity(), ScienceTestContract.View {
+    private lateinit var binding: ResultProfileBinding
 
     private val presenter = ScienceTestPresenter()
 

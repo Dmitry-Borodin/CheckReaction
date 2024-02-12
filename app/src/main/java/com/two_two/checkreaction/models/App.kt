@@ -1,37 +1,27 @@
-package com.two_two.checkreaction.models;
+package com.two_two.checkreaction.models
 
-import android.app.Application;
-import android.support.annotation.NonNull;
-
-import com.crashlytics.android.Crashlytics;
-
-import io.fabric.sdk.android.BuildConfig;
-import io.fabric.sdk.android.Fabric;
+import android.app.Application
 
 /**
  * Created by Dmitry Borodin on 27.01.2016.
  */
-public class App extends Application {
+class App : Application() {
+    var localData: LocalData? = null
+        private set
 
-    private static App sInstance;
-    private LocalData mLocalData;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sInstance = this;
-        if (!BuildConfig.DEBUG){
-            Fabric.with(this.getApplicationContext(), new Crashlytics());
-        }
-        mLocalData = new LocalData(this.getApplicationContext());
+    override fun onCreate() {App
+        super.onCreate()
+        sInstance = this
+//        if (!BuildConfig.DEBUG) {
+//            Fabric.with(this.applicationContext, Crashlytics())
+//        }
+        localData = LocalData(this.applicationContext)
     }
 
-    @NonNull
-    public static App getInstance() {
-        return sInstance;
-    }
-
-    public LocalData getLocalData() {
-        return mLocalData;
+    companion object {
+        private var sInstance: App? = null
+        @JvmStatic
+        val instance: App
+            get() = sInstance!!
     }
 }

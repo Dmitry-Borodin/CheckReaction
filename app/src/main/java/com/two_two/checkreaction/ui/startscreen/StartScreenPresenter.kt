@@ -38,7 +38,7 @@ class StartScreenPresenter() {
      * @param username name to save
      */
     fun saveUsername(username: String) {
-        if (isUsernameCurrect(username)) App.getInstance().localData.username = username
+        if (isUsernameCurrect(username)) App.instance.localData.username = username
     }
 
     private fun isUsernameCurrect(username: String): Boolean {

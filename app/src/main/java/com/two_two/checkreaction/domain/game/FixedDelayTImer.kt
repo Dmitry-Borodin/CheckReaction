@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.domain.game
 
 import android.os.Handler
+import android.os.Looper
 
 /**
  * @author Dmitry Borodin on 2017-01-29.
@@ -9,8 +10,8 @@ import android.os.Handler
 class FixedDelayTimer : DelayTimer {
 
     private val DELAY = 1000L //1 second
-    private val handler = Handler()
-    private var runnable: Runnable? = null
+    private val handler = Handler(Looper.getMainLooper())
+    private lateinit var runnable: Runnable
 
     override fun runDelayed(delayTimerCallback: DelayTimerCallback) {
         runnable = Runnable { delayTimerCallback.delayedCode() }

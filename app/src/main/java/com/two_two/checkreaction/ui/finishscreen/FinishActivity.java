@@ -9,10 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.two_two.checkreaction.R;
-import com.two_two.checkreaction.ui.gamescore.complex.ComplexScoreActivity;
 import com.two_two.checkreaction.models.App;
 import com.two_two.checkreaction.models.firebase.FirebaseComplexResult;
-import com.two_two.checkreaction.domain.firebase.FirebaseSender;
 import com.two_two.checkreaction.models.game.TestResult;
 import com.two_two.checkreaction.models.game.TestType;
 import com.two_two.checkreaction.ui.reactiontest.TestActivity;
@@ -75,7 +73,7 @@ public class FinishActivity extends Activity {
         final String username = App.getInstance().getLocalData().getUsername();
         mFireResult = new FirebaseComplexResult(mTestResult.getAverage(),
                 mTestResult.getMedian(), username);
-        FirebaseSender.getInstance().updateComplexTestResult(mFireResult);
+//        FirebaseSender.getInstance().updateComplexTestResult(mFireResult);
     }
 
     public void againMethod(View view) {
@@ -90,12 +88,12 @@ public class FinishActivity extends Activity {
     }
 
     //  defined in XML
-    public void toRaiting(View view) {
-        Intent intent = new Intent(this, ComplexScoreActivity.class);
-        intent.putExtra(FirebaseComplexResult.TAG, mFireResult);
-        startActivity(intent);
-        finish();
-    }
+//    public void toRaiting(View view) {
+//        Intent intent = new Intent(this, ComplexScoreActivity.class);
+//        intent.putExtra(FirebaseComplexResult.TAG, mFireResult);
+//        startActivity(intent);
+//        finish();
+//    }
 
     @Override
     protected void onNewIntent(Intent intent) {

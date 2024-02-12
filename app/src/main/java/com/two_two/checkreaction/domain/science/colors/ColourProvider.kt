@@ -9,7 +9,7 @@ import com.two_two.checkreaction.models.App
 /**
  * @author Dmitry Borodin on 2017-01-29.
  */
-class ColourProvider(val context: Context = App.getInstance()) {
+class ColourProvider(val context: Context = App.instance) {
 
     //todo add anotation that returning resource
     //todo add annotations to limit available indexes

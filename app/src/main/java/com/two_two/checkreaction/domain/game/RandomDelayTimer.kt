@@ -1,6 +1,7 @@
 package com.two_two.checkreaction.domain.game
 
 import android.os.Handler
+import android.os.Looper
 import java.util.*
 
 /**
@@ -11,8 +12,8 @@ import java.util.*
 class RandomDelayTimer : DelayTimer {
 
     private val random = Random()
-    private val handler = Handler()
-    private var runnable : Runnable? = null
+    private val handler = Handler(Looper.getMainLooper())
+    private lateinit var runnable : Runnable
 
     override fun runDelayed(delayTimerCallback: DelayTimerCallback) {
         runnable = Runnable{ delayTimerCallback.delayedCode() }
@@ -28,9 +29,9 @@ class RandomDelayTimer : DelayTimer {
         get() = random.nextInt(RANDOM_DELAY1) + random.nextInt(RANDOM_DELAY2) + MIN_DELAY
 
     companion object {
-        private val MIN_DELAY = 500
-        private val RANDOM_DELAY1 = 5000
-        private val RANDOM_DELAY2 = 1000
+        private const val MIN_DELAY = 500
+        private const val RANDOM_DELAY1 = 5000
+        private const val RANDOM_DELAY2 = 1000
     }
 
 }

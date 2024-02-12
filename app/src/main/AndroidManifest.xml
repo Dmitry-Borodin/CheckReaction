@@ -32,9 +32,9 @@
             android:launchMode="singleTask"
             android:parentActivityName=".ui.startscreen.StartActivity"
             android:exported="true"/>
-        <activity
-            android:name=".ui.gamescore.complex.ComplexScoreActivity"
-            android:parentActivityName=".ui.startscreen.StartActivity" />
+<!--        <activity-->
+<!--            android:name=".ui.gamescore.complex.ComplexScoreActivity"-->
+<!--            android:parentActivityName=".ui.startscreen.StartActivity" />-->
         <activity android:name=".ui.scienceproject.ScienceActivitySplash" />
         <activity
             android:name=".ui.scienceproject.ScienceTestActivity"

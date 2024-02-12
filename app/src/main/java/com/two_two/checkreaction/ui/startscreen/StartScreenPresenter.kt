@@ -38,12 +38,11 @@ class StartScreenPresenter() {
      * @param username name to save
      */
     fun saveUsername(username: String) {
-        if (isUsernameCurrect(username)) App.instance.localData.username = username
+        if (isUsernameCorrect(username)) App.instance.localData?.username = username
     }
 
-    private fun isUsernameCurrect(username: String): Boolean {
-        if (username.isEmpty() || username.length > Constants.USERNAME_LEIGHT_LIMIT) return false
-        return true
+    private fun isUsernameCorrect(username: String): Boolean {
+        return !(username.isEmpty() || username.length > Constants.USERNAME_LEIGHT_LIMIT)
     }
 
     private fun startTest(testType: TestType) {
